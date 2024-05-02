@@ -6,7 +6,9 @@ function NoteChat() {
   const [newNote, setNewNote] = useState('');
   const [editedMessageId, setEditedMessageId] = useState(null);
   const [editedMessage, setEditedMessage] = useState('');
-  const [originalNotes, setOriginalNotes] = useState([]); // Сохраняем оригинальный список заметок
+  const [originalNotes, setOriginalNotes] = useState([]);
+  const [showOptions, setShowOptions] = useState(false);
+  const [selectedNoteId, setSelectedNoteId] = useState(null);
   const token = localStorage.getItem('jwtToken');
 
   const fetchNotes = async () => {
@@ -17,7 +19,7 @@ function NoteChat() {
         },
       });
       setNotes(response.data);
-      setOriginalNotes(response.data); // Сохраняем оригинальный список заметок
+      setOriginalNotes(response.data);
     } catch (error) {
       console.error('Error fetching notes:', error);
     }
@@ -44,34 +46,47 @@ function NoteChat() {
   const handleDoubleClick = (messageId, message) => {
     setEditedMessageId(messageId);
     setEditedMessage(message);
+    setShowOptions(true);
+    setSelectedNoteId(messageId);
   };
 
-  const handleSaveEditedMessage = async () => {
+  const handleEditNote = async () => {
     try {
-      await axios.put(`http://localhost:8086/note/${editedMessageId}`, { message: editedMessage }, {
+      await axios.put(`http://localhost:8086/note/${selectedNoteId}`, { message: editedMessage }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       const updatedNotes = notes.map(note => {
-        if (note.id === editedMessageId) {
+        if (note.id === selectedNoteId) {
           return { ...note, message: editedMessage };
         }
         return note;
       });
       setNotes(updatedNotes);
-      setOriginalNotes(updatedNotes); // Обновляем оригинальный список
+      setOriginalNotes(updatedNotes);
       setEditedMessageId(null);
       setEditedMessage('');
+      setShowOptions(false);
     } catch (error) {
       console.error('Error updating note:', error);
     }
   };
 
-  const handleCancelEdit = () => {
-    setNotes(originalNotes); // Восстанавливаем оригинальный список при отмене редактирования
-    setEditedMessageId(null);
-    setEditedMessage('');
+  const handleDeleteNote = async () => {
+    try {
+      await axios.delete(`http://localhost:8086/note/${selectedNoteId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const updatedNotes = notes.filter(note => note.id !== selectedNoteId);
+      setNotes(updatedNotes);
+      setOriginalNotes(updatedNotes);
+      setShowOptions(false);
+    } catch (error) {
+      console.error('Error deleting note:', error);
+    }
   };
 
   return (
@@ -90,10 +105,10 @@ function NoteChat() {
       </div>
       <input type="text" value={newNote} onChange={(e) => setNewNote(e.target.value)} />
       <button onClick={handleSendNote}>Send Note</button>
-      {editedMessageId && (
+      {showOptions && (
         <>
-          <button onClick={handleSaveEditedMessage}>Save Changes</button>
-          <button onClick={handleCancelEdit}>Cancel</button>
+          <button onClick={handleEditNote}>Edit</button>
+          <button onClick={handleDeleteNote}>Delete</button>
         </>
       )}
     </div>
