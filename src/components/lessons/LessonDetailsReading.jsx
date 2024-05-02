@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function LessonDetailsReading() {
   const { lessonId } = useParams();
-  const [selectedOptions, setSelectedOptions] = useState({}); // Объект для хранения выбранных вариантов ответов
+  const [selectedOptions, setSelectedOptions] = useState({});
   const [result, setResult] = useState(null);
   const [lesson, setLesson] = useState(null);
 
@@ -26,7 +26,7 @@ function LessonDetailsReading() {
   const handleOptionClick = (questionId, optionId) => {
     setSelectedOptions({
       ...selectedOptions,
-      [questionId]: optionId, // Связываем вопрос с выбранным вариантом ответа
+      [questionId]: optionId,
     });
   };
 

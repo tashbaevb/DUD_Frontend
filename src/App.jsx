@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginSignUp from './components/LoginSignUp/LoginSignUp';
-import UserProfile from './components/LoginSignUp/UserProfile';
-import LessonList from './components/LessonList';
-import LessonDetailsGrammar from './components/LessonDetailsGrammar';
-import LessonDetailsReading from './components/LessonDetailsReading';
-import LessonDetailsListening from './components/LessonDetailsListening';
+import UserProfile from './components/UserProfile';
+import LessonList from './components/lessons/LessonList';
+import LessonDetailsGrammar from './components/lessons/LessonDetailsGrammar';
+import LessonDetailsReading from './components/lessons/LessonDetailsReading';
+import LessonDetailsListening from './components/lessons/LessonDetailsListening';
 import Books from './components/content/library/Books';
 import BookDetail from './components/content/library/BookDetail';
 import MoviesList from './components/content/movies/MoviesList';

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 
 function LessonDetailsListening() {
-  const { lessonId } = useParams(); // Extract levelId from URL params
+  const { lessonId } = useParams();
   const levelId = sessionStorage.getItem('selectedLevelId');
   const [selectedOptions, setSelectedOptions] = useState({});
   const [result, setResult] = useState(null);
@@ -67,7 +67,6 @@ function LessonDetailsListening() {
       </ul>
       <button onClick={handleCheckResult}>Check Result</button>
       {result !== null && <p>Number of correct answers: {result}</p>}
-      {/* Pass levelId as a URL parameter */}
       <Link to={`/lessons/${levelId}`}>Back to Lesson List</Link>
     </div>
   );
