@@ -10,6 +10,7 @@ import Books from './components/content/library/Books';
 import BookDetail from './components/content/library/BookDetail';
 import MoviesList from './components/content/movies/MoviesList';
 import MovieDetail from './components/content/movies/MovieDetail';
+import NoteChat from './components/content/NoteChat';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginSignUp />} />
         <Route path="/profile/:email" element={<UserProfile />} />
+        <Route path="/notes" element={<NoteChat />} />
+
         <Route path="/lessons/:levelId" element={<LessonList />} />
         <Route path="/lesson/:lessonId/grammar" element={<LessonDetailsGrammar />} />
         <Route path="/lesson/:lessonId/reading" element={<LessonDetailsReading />} />

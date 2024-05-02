@@ -15,7 +15,7 @@ function UserProfile() {
           },
         });
         const { levelNames } = response.data;
-        setLevelNames(levelNames.sort()); // Sort the level names alphabetically
+        setLevelNames(levelNames.sort());
       } catch (error) {
         console.error('Error fetching user profile:', error);
       }
@@ -25,7 +25,7 @@ function UserProfile() {
   }, []);
 
   const handleLevelClick = (levelId) => {
-    window.location.href = `/lessons/${levelId}`; // Redirect to the lessons page for the selected level
+    window.location.href = `/lessons/${levelId}`;
   };
 
   return (
@@ -45,6 +45,9 @@ function UserProfile() {
       </Link>
       <Link to="/movies">
         <button>Go to Movies</button>
+      </Link>
+      <Link to="/notes">
+        <button>Open Note Chat</button>
       </Link>
     </div>
   );
