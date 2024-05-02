@@ -26,13 +26,6 @@ The German Learning App is a web application designed to assist users in learnin
   - Hibernate
   - JWT
 
-## Features
-
-- **User Authentication:** Allows users to sign up, log in, and manage their accounts securely.
-- **Lesson Navigation:** Provides users with a seamless navigation experience between different types of lessons (grammar, reading, listening).
-- **Library Access:** Enables users to access a library of books and movies sorted by difficulty levels for language learning.
-- **Note Taking:** Allows users to take notes and memorize new words and expressions encountered during their learning journey.
-
 ## Installation and Running
 
 1. Clone the repository:
