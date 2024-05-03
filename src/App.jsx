@@ -19,7 +19,6 @@ function App() {
         <Route path="/" element={<LoginSignUp />} />
         <Route path="/profile/:email" element={<UserProfile />} />
         <Route path="/notes" element={<NoteChat />} />
-
         <Route path="/lessons/:levelId" element={<LessonList />} />
         <Route path="/lesson/:lessonId/grammar" element={<LessonDetailsGrammar />} />
         <Route path="/lesson/:lessonId/reading" element={<LessonDetailsReading />} />
