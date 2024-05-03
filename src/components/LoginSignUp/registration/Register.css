@@ -1,0 +1,113 @@
+.main {
+  width: 100%;
+  height: 100vh;
+  /* background-color: red !important; */
+}
+
+.regist {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(248, 250, 252);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.regist .reg_text {
+  color: rgb(9, 9, 20);
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.regist .form_reg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px !important;
+  align-items: center;
+  padding: 20px; /* добавляем внутренний отступ */
+  border-radius: 20px;
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.03),
+    0px 3px 11px 0px rgba(0, 0, 0, 0.06);
+  background: rgb(255, 255, 255);
+  max-width: 500px; /* добавляем максимальную ширину */
+  width: 100%; /* ширина занимает всю доступную область */
+}
+
+.regist .form_reg .reg_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px !important;
+  width: 100%; /* ширина занимает всю доступную область */
+}
+
+.regist .form_reg .reg_form input,
+.regist #language_level {
+  box-sizing: border-box;
+  border: 1px solid rgb(228, 228, 231);
+  border-radius: 9px;
+  background: rgb(255, 255, 255);
+  padding: 16px;
+  margin: 10px 0; /* уменьшаем вертикальные отступы */
+  width: 100%; /* ширина занимает всю доступную область */
+  font-size: 20px;
+}
+
+.regist .custom-select {
+  min-width: 100%; /* ширина занимает всю доступную область */
+  margin: 10px 0; /* уменьшаем вертикальные отступы */
+}
+
+.regist #label_lang_level {
+  font-size: 20px;
+  margin: 16px;
+}
+
+.regist #reg_but {
+  width: 100%; /* ширина занимает всю доступную область */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-radius: 9px;
+  background: rgb(116, 147, 213);
+  border: none; /* Убираем границу */
+  outline: none; /* Убираем обводку при фокусе */
+  margin-top: 20px; /* добавляем отступ сверху */
+}
+
+.regist #reg_text_but {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+  text-align: center;
+}
+
+.regist #text_after_but {
+  color: rgb(113, 113, 122);
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.regist #text_in_p a {
+  color: #007bff; /* Цвет текста ссылки */
+  text-decoration: none; /* Убрать стандартное подчеркивание */
+}
+
+.regist #text_in_p a:hover {
+  text-decoration: underline; /* Добавить подчеркивание при наведении */
+}

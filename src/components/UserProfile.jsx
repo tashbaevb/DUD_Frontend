@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
+const levelIndexes = {
+  "A1": 1,
+  "A2": 2,
+  "B1": 3
+};
+
 function UserProfile() {
   const { email } = useParams();
   const [levelNames, setLevelNames] = useState([]);
@@ -24,7 +30,8 @@ function UserProfile() {
     fetchUserProfile();
   }, []);
 
-  const handleLevelClick = (levelId) => {
+  const handleLevelClick = (levelName) => {
+    const levelId = levelIndexes[levelName];
     window.location.href = `/lessons/${levelId}`;
   };
 
@@ -36,7 +43,7 @@ function UserProfile() {
       <ul>
         {levelNames.map((levelName, index) => (
           <li key={index}>
-            <button onClick={() => handleLevelClick(index + 1)}>{levelName}</button>
+            <button onClick={() => handleLevelClick(levelName)}>{levelName}</button>
           </li>
         ))}
       </ul>
