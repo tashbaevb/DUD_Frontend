@@ -244,3 +244,30 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
+
+{
+  /* 
+    /*
+    <div>
+      <h2>User Profile</h2>
+      <p>Email: {email}</p>
+      <p>Level Names:</p>
+      <ul>
+        {levelNames.map((levelName, index) => (
+          <li key={index}>
+            <button onClick={() => handleLevelClick(levelName)}>{levelName}</button>
+          </li>
+        ))}
+      </ul>
+      <Link to="/books">
+        <button>Go to Library</button>
+      </Link>
+      <Link to="/movies">
+        <button>Go to Movies</button>
+      </Link>
+      <Link to="/notes">
+        <button>Open Note Chat</button>
+      </Link>
+    </div>
+    */
+}
