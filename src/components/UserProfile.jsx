@@ -46,28 +46,6 @@ function UserProfile() {
 
   return (
     <div className="main">
-      <div className="profile-sidebar">
-        <div className="text-center mb-4">
-          <img src={logo} alt="Company Logo" height="50" />
-          <h5>Lern-App</h5>
-        </div>
-        <div className="account">
-          <h6>Account</h6>
-          <ul className="list-unstyled">
-            <li>
-              <Link to="/notes">
-                <i className="fas fa-envelope"></i> Messages
-              </Link>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fas fa-cog"></i> Settings
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <button
           className="navbar-toggler"
@@ -123,12 +101,11 @@ function UserProfile() {
         {levelNames.map((levelName, index) => (
           <div className="card level-card" key={index}>
             <div className="card-body progress-card">
-              <h5 className="card-title">{levelName}</h5>
               <button
                 onClick={() => handleLevelClick(levelName)}
                 className="btn btn-primary"
               >
-                Start Learning
+                {levelName}
               </button>
             </div>
           </div>
