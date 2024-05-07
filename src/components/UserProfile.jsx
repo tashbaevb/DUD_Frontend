@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom"; // Add this import
 import axios from "axios";
 import "./UserProfile.css";
 import logo from "./media/logo.png";
@@ -8,21 +8,37 @@ import photo from "./media/photo.jpg";
 import movie from "./media/movie.png";
 import library from "./media/library.png";
 
-const UserProfile = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
+const levelIndexes = {
+  A1: 1,
+  A2: 2,
+  B1: 3,
+};
 
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
-  };
+function UserProfile() {
+  const { email } = useParams();
+  const [levelNames, setLevelNames] = useState([]);
 
-  // You can define your level indexes here
-  const levelIndexes = {
-    A1: 1,
-    A2: 2,
-    B1: 3,
-  };
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8086/user/my-profile",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+            },
+          }
+        );
+        const { levelNames } = response.data;
+        setLevelNames(levelNames.sort());
+      } catch (error) {
+        console.error("Error fetching user profile:", error);
+      }
+    };
 
-  // Function to handle level click
+    fetchUserProfile();
+  }, []);
+
   const handleLevelClick = (levelName) => {
     const levelId = levelIndexes[levelName];
     window.location.href = `/lessons/${levelId}`;
@@ -35,21 +51,13 @@ const UserProfile = () => {
           <img src={logo} alt="Company Logo" height="50" />
           <h5>Lern-App</h5>
         </div>
-        <div className="menu">
-          <h6>Menu</h6>
-          <ul className="list-unstyled">
-            <li>
-              <a href="#">Overview</a>
-            </li>
-          </ul>
-        </div>
         <div className="account">
           <h6>Account</h6>
           <ul className="list-unstyled">
             <li>
-              <a href="#">
+              <Link to="/notes">
                 <i className="fas fa-envelope"></i> Messages
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#">
@@ -103,7 +111,7 @@ const UserProfile = () => {
       <div className="container">
         <div className="card greeting-card">
           <div>
-            <h3>Hi Username, Good Afternoon!</h3>
+            <h3>Hi {email}, Good Afternoon!</h3>
           </div>
           <div>
             <img src={photo} alt="User Photo" />
@@ -112,49 +120,19 @@ const UserProfile = () => {
       </div>
 
       <div className="containerEnd">
-        <div className="card level-card">
-          <div className="card-body progress-card">
-            <h5 className="card-title">A1 - Beginner</h5>
-            <div className="progress mb-3" style={{ width: "100%" }}>
-              <div
-                className="progress-bar"
-                role="progressbar"
-                style={{ width: "20%" }}
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
+        {levelNames.map((levelName, index) => (
+          <div className="card level-card" key={index}>
+            <div className="card-body progress-card">
+              <h5 className="card-title">{levelName}</h5>
+              <button
+                onClick={() => handleLevelClick(levelName)}
+                className="btn btn-primary"
+              >
+                Start Learning
+              </button>
             </div>
-            <a
-              href="file:///D:/Lern-App/list.html#"
-              className="btn btn-primary"
-            >
-              Start Learning
-            </a>
           </div>
-        </div>
-
-        <div className="card level-card">
-          <div className="card-body progress-card">
-            <h5 className="card-title">A2 - Elementary</h5>
-            <div className="progress mb-3">
-              <div
-                className="progress-bar"
-                role="progressbar"
-                style={{ width: "50%" }}
-                aria-valuenow="30"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-            <a
-              href="file:///D:/Lern-App/list.html#"
-              className="btn btn-primary"
-            >
-              Start Learning
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div className="containerEND mt-4">
@@ -167,7 +145,7 @@ const UserProfile = () => {
               skills.
             </p>
             <a
-              href="#"
+              href="/movies"
               className="btn btn-primary mx-auto "
               style={{ marginTop: "20px !important" }}
             >
@@ -182,9 +160,9 @@ const UserProfile = () => {
             <p className="card-text">
               Visit our library for a wide range of German books and resources.
             </p>
-            <a href="#" className="btn btn-primary mx-auto">
+            <Link to="/books" className="btn btn-primary mx-auto">
               Visit
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -241,33 +219,6 @@ const UserProfile = () => {
       </footer>
     </div>
   );
-};
+}
 
 export default UserProfile;
-
-{
-  /* 
-    /*
-    <div>
-      <h2>User Profile</h2>
-      <p>Email: {email}</p>
-      <p>Level Names:</p>
-      <ul>
-        {levelNames.map((levelName, index) => (
-          <li key={index}>
-            <button onClick={() => handleLevelClick(levelName)}>{levelName}</button>
-          </li>
-        ))}
-      </ul>
-      <Link to="/books">
-        <button>Go to Library</button>
-      </Link>
-      <Link to="/movies">
-        <button>Go to Movies</button>
-      </Link>
-      <Link to="/notes">
-        <button>Open Note Chat</button>
-      </Link>
-    </div>
-    */
-}
