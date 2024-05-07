@@ -1,0 +1,144 @@
+/* Style for the profile sidebar */
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+
+.profile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  z-index: 1000; /* Ensure the sidebar stays on top */
+}
+.container {
+  max-width: 840px;
+  width: 70%;
+}
+
+.containerEnd {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-sidebar h5 {
+  margin-bottom: 20px;
+}
+
+.profile-sidebar .menu h6,
+.profile-sidebar .account h6 {
+  margin-bottom: 10px;
+}
+
+.profile-sidebar .menu ul,
+.profile-sidebar .account ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.profile-sidebar .menu ul li,
+.profile-sidebar .account ul li {
+  margin-bottom: 5px;
+}
+
+.profile-sidebar .menu ul li a,
+.profile-sidebar .account ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.profile-sidebar .menu ul li a:hover,
+.profile-sidebar .account ul li a:hover {
+  color: #007bff;
+}
+
+/* Adjustments for images and cards */
+.initial-logo {
+  display: none;
+}
+.level-card {
+  margin-bottom: 20px;
+  display: flex;
+}
+.greeting-card {
+  background-color: #e9f4ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.greeting-card h3 {
+  margin-bottom: 10px;
+}
+.greeting-card img {
+  max-width: 400px;
+  border-radius: 50%;
+}
+.card-img-top {
+  max-width: 200px;
+  height: auto;
+}
+.containerEND {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.additional {
+  background-color: #e9f4ff;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.cont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.navbar {
+  z-index: 999; /* Ensure the navbar is behind the sidebar */
+  width: 100%;
+}
+.user-sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Initially hidden */
+  height: 100%;
+  width: 300px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  transition: right 0.3s ease;
+}
+.user-sidebar.show {
+  right: 0;
+}
+.initial-logo {
+  display: none;
+}
+footer {
+  width: 100%;
+  position: relative;
+  z-index: 1100;
+  background-color: #eceaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-card {
+  width: 800px !important;
+  flex-direction: column;
+  display: flex;
+  gap: 20px;
+}
