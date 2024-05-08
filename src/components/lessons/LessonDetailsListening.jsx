@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import "./Listening.css";
 
 function LessonDetailsListening() {
   const { lessonId } = useParams();
@@ -51,39 +52,130 @@ function LessonDetailsListening() {
   }
 
   return (
-    <div>
-      <h2>Listening Lesson Details</h2>
-      <h3>{lesson.title}</h3>
-      <p>{lesson.description}</p>
-      <audio controls>
-        <source
-          src={`http://localhost:8086/${lesson.mp3FilePath}`}
-          type="audio/mpeg"
-        />
-        Your browser does not support the audio element.
-      </audio>
-      <h3>Questions</h3>
-      <ul>
-        {lesson.questions.map((question) => (
-          <li key={question.id}>
-            <h4>{question.question}</h4>
-            <ul>
-              <li onClick={() => handleOptionClick(question.id, 1)}>
-                {question.option1}
+    <div class="main-content">
+      <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Logo" height="30" />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link message-icon" href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
               </li>
-              <li onClick={() => handleOptionClick(question.id, 2)}>
-                {question.option2}
-              </li>
-              <li onClick={() => handleOptionClick(question.id, 3)}>
-                {question.option3}
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="sidebar">
+                  <img src="user-icon.png" alt="User" height="30" />
+                </a>
               </li>
             </ul>
-          </li>
-        ))}
-      </ul>
-      <button onClick={handleCheckResult}>Check Result</button>
-      {result !== null && <p>Number of correct answers: {result}</p>}
-      <Link to={`/lessons/${levelId}`}>Back to Lesson List</Link>
+          </div>
+        </nav>
+      </div>
+
+      <main>
+        <div class="main_container">
+          <h1 id="big_title">{lesson.title}</h1>
+        </div>
+        <div id="big_tetx">
+          <p>{lesson.description}</p>
+        </div>
+        <div class="audioDiv">
+          <audio id="audioPlayer" controls>
+            <source
+              src={`http://localhost:8086/${lesson.mp3FilePath}`}
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div className="test-questions">
+          {lesson.questions.map((question) => (
+            <div key={question.id} className="question">
+              <h2>{question.question}</h2>
+              <div className="selector-test">
+                <span
+                  className={
+                    selectedOptions[question.id] === 1
+                      ? "variant selected"
+                      : "variant notselected"
+                  }
+                  onClick={() => handleOptionClick(question.id, 1)}
+                >
+                  A
+                </span>
+                <span>{question.option1}</span>
+              </div>
+
+              <div className="selector-test">
+                <span
+                  className={
+                    selectedOptions[question.id] === 2
+                      ? "variant selected"
+                      : "variant notselected"
+                  }
+                  onClick={() => handleOptionClick(question.id, 2)}
+                >
+                  B
+                </span>
+                <span>{question.option2}</span>
+              </div>
+
+              <div className="selector-test">
+                <span
+                  className={
+                    selectedOptions[question.id] === 3
+                      ? "variant selected"
+                      : "variant notselected"
+                  }
+                  onClick={() => handleOptionClick(question.id, 3)}
+                >
+                  C
+                </span>
+                <span>{question.option3}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="button-container">
+          <button className="button-79" onClick={handleCheckResult}>
+            Submit
+          </button>
+        </div>
+        {result !== null && <p>Number of correct answers: {result}</p>}
+        <Link to={`/lessons/${levelId}`}>Back to Lesson List</Link>
+      </main>
+
+      <div class="footer-container">
+        <footer class="footer-content">
+          <div class="footer-content">
+            <form action="" class="email-form">
+              <input
+                type="email"
+                id="emailInput"
+                class="email-input-field"
+                placeholder="Enter your email"
+              />
+              <button type="button" class="subscribe-button">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }

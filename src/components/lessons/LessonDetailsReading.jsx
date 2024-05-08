@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import "./Lesson.css";
+import "./Reading.css";
 
 function LessonDetailsReading() {
   const { lessonId } = useParams();
