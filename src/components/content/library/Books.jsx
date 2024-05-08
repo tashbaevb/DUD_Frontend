@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./books.css";
+import "./Books.css";
 import Navbar from "../../navbar/Navbar";
 // import Footer from "../../footer/Footer";
 import Book from "./Ch_ai.jpg";
