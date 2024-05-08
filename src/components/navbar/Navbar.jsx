@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import logo from "../assets/logo.png";
-import user from "../assets/user-icon.png";
+import logo from "../../assets/logo.png";
+import user from "../../assets/user-icon.png";
 
 function Navbar() {
   const [userEmail, setUserEmail] = useState("");

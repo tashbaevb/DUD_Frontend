@@ -1,38 +1,3 @@
-footer {
-  background-color: #f8f9fa;
-  padding: 30px 0;
-}
-
-footer form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer input[type="email"] {
-  width: 200px;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  font-size: 16px;
-  margin-right: 10px;
-}
-
-footer button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-footer button:hover {
-  background-color: #0056b3;
-}
-
 body,
 html {
   height: 100%;
@@ -47,14 +12,6 @@ html {
 
 main {
   flex: 1 0 auto;
-}
-
-.footer-container {
-  flex: 0 0 auto;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 
 #bit_title {
@@ -74,8 +31,8 @@ main {
   margin-top: 20px;
 }
 
-.main_container h1 {
-  margin-bottom: 20px;
+.main_container h2 {
+  margin-bottom: 16px;
   font-weight: 500;
 }
 
@@ -108,8 +65,8 @@ main {
   padding: 30px;
   /* border: 1px solid #ccc; */
   margin: 30px;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .selector-test {
@@ -209,44 +166,32 @@ main {
 .question h2 {
   padding: 20px;
 }
-/* Основный контейнер */
-
-/* Стили для элемента аудио */
-.audioDiv {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.main-container audio {
   margin-top: 20px;
 }
 
-#audioPlayer {
-  width: 80%;
-  max-width: 400px;
-  margin: 20px;
-}
-
 /* Стили для контролов аудио */
-#audioPlayer::-webkit-media-controls {
+.main-container audio::-webkit-media-controls {
   background-color: #f8f9fa;
   border-radius: 5px;
 }
 
-#audioPlayer::-webkit-media-controls-play-button {
+.main-container audio::-webkit-media-controls-play-button {
   color: #007bff;
 }
 
-#audioPlayer::-webkit-media-controls-play-button:hover {
+.main-container audio::-webkit-media-controls-play-button:hover {
   color: #0056b3;
 }
 
-#audioPlayer::-webkit-media-controls-timeline {
+.main-container audio::-webkit-media-controls-timeline {
   background-color: #ced4da;
 }
 
-#audioPlayer::-webkit-media-controls-current-time-display {
+.main-container audio::-webkit-media-controls-current-time-display {
   color: #000;
 }
 
-#audioPlayer::-webkit-media-controls-time-remaining-display {
+.main-container audio::-webkit-media-controls-time-remaining-display {
   color: #000;
 }

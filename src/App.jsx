@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./components/LoginSignUp/Login";
-import SignUp from "./components/LoginSignUp/registration/SignUp";
+import Login from "./components/authRegister/Login";
+import SignUp from "./components/authRegister/registration/SignUp";
 import UserProfile from "./components/UserProfile";
 import LessonList from "./components/lessons/LessonList";
-import LessonDetailsGrammar from "./components/lessons/LessonDetailsGrammar";
-import LessonDetailsReading from "./components/lessons/LessonDetailsReading";
-import LessonDetailsListening from "./components/lessons/LessonDetailsListening";
+import LessonDetailsGrammar from "./components/lessons/grammar/LessonDetailsGrammar";
+import LessonDetailsReading from "./components/lessons/reading/LessonDetailsReading";
+import LessonDetailsListening from "./components/lessons/listening/LessonDetailsListening";
 import Books from "./components/content/library/Books";
 import BookDetail from "./components/content/library/BookDetail";
 import MoviesList from "./components/content/movies/MoviesList";
@@ -18,8 +18,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<SignUp />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
         <Route path="/profile/:email" element={<UserProfile />} />
         <Route path="/notes" element={<NoteChat />} />
         <Route path="/lessons/:levelId" element={<LessonList />} />

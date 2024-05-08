@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import Navbar from "../Navbar";
-import "./Reading.css";
+import Navbar from "../../navbar/Navbar";
+import Footer from "../../footer/Footer";
+import "./Listening.css";
 
-function LessonDetailsReading() {
+function LessonDetailsListening() {
   const { lessonId } = useParams();
+  const levelId = sessionStorage.getItem("selectedLevelId");
   const [selectedOptions, setSelectedOptions] = useState({});
   const [result, setResult] = useState(null);
   const [lesson, setLesson] = useState(null);
@@ -14,7 +16,7 @@ function LessonDetailsReading() {
     const fetchLesson = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8086/lesson/get/${lessonId}/reading`
+          `http://localhost:8086/lesson/get/${lessonId}/listening`
         );
         setLesson(response.data);
       } catch (error) {
@@ -38,7 +40,7 @@ function LessonDetailsReading() {
         selectedOption: optionId,
       }));
       const response = await axios.post(
-        `http://localhost:8086/reading/check/${lessonId}`,
+        `http://localhost:8086/listen/check/${lessonId}`,
         optionsArray
       );
       setResult(response.data);
@@ -52,15 +54,24 @@ function LessonDetailsReading() {
   }
 
   return (
-    <div className="main-content">
+    <div class="main-content">
       <Navbar />
 
       <main>
-        <div className="main_container">
+        <div class="main_container">
           <h1 id="big_title">{lesson.title}</h1>
         </div>
-        <div id="big_text">
+        <div id="big_tetx">
           <p>{lesson.description}</p>
+        </div>
+        <div class="audioDiv">
+          <audio id="audioPlayer" controls>
+            <source
+              src={`http://localhost:8086/${lesson.mp3FilePath}`}
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
         </div>
         <div className="test-questions">
           {lesson.questions.map((question) => (
@@ -79,6 +90,7 @@ function LessonDetailsReading() {
                 </span>
                 <span>{question.option1}</span>
               </div>
+
               <div className="selector-test">
                 <span
                   className={
@@ -92,6 +104,7 @@ function LessonDetailsReading() {
                 </span>
                 <span>{question.option2}</span>
               </div>
+
               <div className="selector-test">
                 <span
                   className={
@@ -114,30 +127,14 @@ function LessonDetailsReading() {
           </button>
         </div>
         {result !== null && <p>Number of correct answers: {result}</p>}
-        <Link to={`/lesson/${lessonId}/listening`}>
-          <button className="button-79">Go to Listening Lesson</button>
+        <Link to={`/lessons/${levelId}`}>
+          <button className="button-79">Back to Lesson List</button>
         </Link>
       </main>
 
-      <div className="footer-container">
-        <footer className="footer-content">
-          <div className="footer-content">
-            <form action="" className="email-form">
-              <input
-                type="email"
-                id="emailInput"
-                className="email-input-field"
-                placeholder="Enter your email"
-              />
-              <button type="button" className="subscribe-button">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </footer>
-      </div>
+      <Footer />
     </div>
   );
 }
 
-export default LessonDetailsReading;
+export default LessonDetailsListening;

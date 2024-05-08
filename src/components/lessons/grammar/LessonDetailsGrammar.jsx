@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Navbar from "../Navbar";
+import Navbar from "../../navbar/Navbar";
+import Footer from "../../footer/Footer";
 import "./Grammar.css";
 
 function LessonDetailsGrammar() {
@@ -61,23 +62,7 @@ function LessonDetailsGrammar() {
         </div>
       </main>
 
-      <div className="footer-container">
-        <footer className="footer-content">
-          <div className="footer-content">
-            <form action="" className="email-form">
-              <input
-                type="email"
-                id="emailInput"
-                className="email-input-field"
-                placeholder="Enter your email"
-              />
-              <button type="button" className="subscribe-button">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </footer>
-      </div>
+      <Footer />
     </div>
   );
 }

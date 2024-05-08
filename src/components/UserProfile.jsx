@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import Navbar from "./Navbar";
+import Navbar from "./navbar/Navbar";
+import Footer from "./footer/Footer";
 import "./UserProfile.css";
 import photo from "../assets/photo.jpg";
 import movie from "../assets/movie.png";
@@ -118,52 +119,7 @@ function UserProfile() {
         <h5>User Profile</h5>
       </div>
 
-      <footer className="bg-body-tertiary text-center text-lg-start mt-4">
-        <div className="container p-4 pb-0">
-          <form action="">
-            <div className="row">
-              <div className="col-auto mb-4 mb-md-0">
-                <p className="pt-2">
-                  <strong>Sign up for our newsletter</strong>
-                </p>
-              </div>
-
-              <div className="col-md-5 col-12 mb-4 mb-md-0">
-                <div data-mdb-input-init className="form-outline ">
-                  <input
-                    type="email"
-                    id="form5Example22"
-                    className="form-control"
-                  />
-                  <label className="form-label" htmlFor="form5Example22">
-                    Email address
-                  </label>
-                </div>
-              </div>
-
-              <div className="col-auto mb-4 mb-md-0">
-                <button
-                  data-mdb-ripple-init
-                  type="button"
-                  className="btn btn-primary mb-4"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div
-          className="text-center p-3"
-          style={{ backgroundColor: "rgba(112, 111, 111, 0.05 " }}
-        >
-          © 2020 Copyright:
-          <a className="text-body" href="https://mdbootstrap.com/">
-            MDBootstrap.com
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,10 @@
+.navbar-container {
+  flex: 0 0 auto;
+}
+.footer-container {
+  flex: 0 0 auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
