@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./navbar/Navbar";
-import Footer from "./footer/Footer";
+// import Footer from "./footer/Footer";
 import "./UserProfile.css";
 import photo from "../assets/photo.jpg";
 import movie from "../assets/movie.png";
@@ -119,7 +119,7 @@ function UserProfile() {
         <h5>User Profile</h5>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
