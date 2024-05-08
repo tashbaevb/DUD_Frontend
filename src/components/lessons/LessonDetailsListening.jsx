@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../Navbar";
 import "./Listening.css";
-import logo from "../media/logo.png";
-import user from "../media/user-icon.png";
 
 function LessonDetailsListening() {
   const { lessonId } = useParams();
@@ -55,38 +54,7 @@ function LessonDetailsListening() {
 
   return (
     <div class="main-content">
-      <div class="navbar-container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="#">
-            <img src={logo} alt="Logo" height="30" />
-          </a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link message-icon" href="#">
-                  <i class="fas fa-envelope"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="sidebar">
-                  <img src={user} alt="User" height="30" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+      <Navbar />
 
       <main>
         <div class="main_container">

@@ -45,10 +45,6 @@ html {
   flex-direction: column;
 }
 
-.navbar-container {
-  flex: 0 0 auto;
-}
-
 main {
   flex: 1 0 auto;
 }

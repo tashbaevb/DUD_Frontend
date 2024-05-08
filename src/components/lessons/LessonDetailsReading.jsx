@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../Navbar";
 import "./Reading.css";
-import logo from "../media/logo.png";
-import user from "../media/user-icon.png";
 
 function LessonDetailsReading() {
   const { lessonId } = useParams();
@@ -54,41 +53,8 @@ function LessonDetailsReading() {
 
   return (
     <div className="main-content">
-      {/* Navbar Container */}
-      <div className="navbar-container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <a className="navbar-brand" href="#">
-            <img src={logo} alt="Logo" height="30" />
-          </a>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <a className="nav-link message-icon" href="#">
-                  <i className="fas fa-envelope"></i>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#" data-toggle="sidebar">
-                  <img src={user} alt="User" height="30" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+      <Navbar />
 
-      {/* Main Content */}
       <main>
         <div className="main_container">
           <h1 id="big_title">{lesson.title}</h1>
@@ -153,7 +119,6 @@ function LessonDetailsReading() {
         </Link>
       </main>
 
-      {/* Footer Container */}
       <div className="footer-container">
         <footer className="footer-content">
           <div className="footer-content">

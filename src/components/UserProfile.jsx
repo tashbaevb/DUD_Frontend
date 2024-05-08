@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom"; // Add this import
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import Navbar from "./Navbar";
 import "./UserProfile.css";
-import logo from "./media/logo.png";
-import user from "./media/user-icon.png";
-import photo from "./media/photo.jpg";
-import movie from "./media/movie.png";
-import library from "./media/library.png";
+import photo from "../assets/photo.jpg";
+import movie from "../assets/movie.png";
+import library from "../assets/library.png";
 
 const levelIndexes = {
   A1: 1,
   A2: 2,
   B1: 3,
+  B2: 4,
 };
 
 function UserProfile() {
@@ -46,37 +46,7 @@ function UserProfile() {
 
   return (
     <div className="main">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <a className="navbar-brand" href="#">
-          <img src={logo} alt="Logo" height="30" />
-        </a>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <a className="nav-link message-icon" href="#">
-                <i className="fas fa-envelope"></i>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#" data-toggle="sidebar">
-                <img src={user} alt="User" height="30" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar />
 
       <div className="container mt-4 text-center">
         <h2>Learn German - Start Your Journey</h2>
