@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
+import "./Lesson.css";
 
 function LessonDetailsReading() {
   const { lessonId } = useParams();
@@ -13,10 +12,12 @@ function LessonDetailsReading() {
   useEffect(() => {
     const fetchLesson = async () => {
       try {
-        const response = await axios.get(`http://localhost:8086/lesson/get/${lessonId}/reading`);
+        const response = await axios.get(
+          `http://localhost:8086/lesson/get/${lessonId}/reading`
+        );
         setLesson(response.data);
       } catch (error) {
-        console.error('Error fetching lesson:', error);
+        console.error("Error fetching lesson:", error);
       }
     };
 
@@ -32,42 +33,142 @@ function LessonDetailsReading() {
 
   const handleCheckResult = async () => {
     try {
-      const optionsArray = Object.values(selectedOptions).map((optionId) => ({ selectedOption: optionId }));
-      const response = await axios.post(`http://localhost:8086/reading/check/${lessonId}`, optionsArray);
+      const optionsArray = Object.values(selectedOptions).map((optionId) => ({
+        selectedOption: optionId,
+      }));
+      const response = await axios.post(
+        `http://localhost:8086/reading/check/${lessonId}`,
+        optionsArray
+      );
       setResult(response.data);
     } catch (error) {
-      console.error('Error checking result:', error);
+      console.error("Error checking result:", error);
     }
   };
-  
 
   if (!lesson) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <h2>Lesson Details Reading</h2>
-      <h3>{lesson.title}</h3>
-      <p>{lesson.description}</p>
-      <h3>Questions</h3>
-      <ul>
-        {lesson.questions.map((question) => (
-          <li key={question.id}>
-            <h4>{question.question}</h4>
-            <ul>
-              <li onClick={() => handleOptionClick(question.id, 1)}>{question.option1}</li>
-              <li onClick={() => handleOptionClick(question.id, 2)}>{question.option2}</li>
-              <li onClick={() => handleOptionClick(question.id, 3)}>{question.option3}</li>
+    <div className="main-content">
+      {/* Navbar Container */}
+      <div className="navbar-container">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <a className="navbar-brand" href="#">
+            <img src="logo.png" alt="Logo" height="30" />
+          </a>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <a className="nav-link message-icon" href="#">
+                  <i className="fas fa-envelope"></i>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" data-toggle="sidebar">
+                  <img src="user-icon.png" alt="User" height="30" />
+                </a>
+              </li>
             </ul>
-          </li>
-        ))}
-      </ul>
-      <button onClick={handleCheckResult}>Check Result</button>
-      {result !== null && <p>Number of correct answers: {result}</p>}
-      <Link to={`/lesson/${lessonId}/listening`}>
-        <button>Go to Listening Lesson</button>
-      </Link>
+          </div>
+        </nav>
+      </div>
+
+      {/* Main Content */}
+      <main>
+        <div className="main_container">
+          <h1 id="big_title">{lesson.title}</h1>
+        </div>
+        <div id="big_text">
+          <p>{lesson.description}</p>
+        </div>
+        <div className="test-questions">
+          {lesson.questions.map((question) => (
+            <div key={question.id} className="question">
+              <h2>{question.question}</h2>
+              <div className="selector-test">
+                <span
+                  className={
+                    selectedOptions[question.id] === 1
+                      ? "variant selected"
+                      : "variant notselected"
+                  }
+                  onClick={() => handleOptionClick(question.id, 1)}
+                >
+                  A
+                </span>
+                <span>{question.option1}</span>
+              </div>
+              <div className="selector-test">
+                <span
+                  className={
+                    selectedOptions[question.id] === 2
+                      ? "variant selected"
+                      : "variant notselected"
+                  }
+                  onClick={() => handleOptionClick(question.id, 2)}
+                >
+                  B
+                </span>
+                <span>{question.option2}</span>
+              </div>
+              <div className="selector-test">
+                <span
+                  className={
+                    selectedOptions[question.id] === 3
+                      ? "variant selected"
+                      : "variant notselected"
+                  }
+                  onClick={() => handleOptionClick(question.id, 3)}
+                >
+                  C
+                </span>
+                <span>{question.option3}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="button-container">
+          <button className="button-79" onClick={handleCheckResult}>
+            Submit
+          </button>
+        </div>
+        {result !== null && <p>Number of correct answers: {result}</p>}
+        <Link to={`/lesson/${lessonId}/listening`}>
+          <button>Go to Listening Lesson</button>
+        </Link>
+      </main>
+
+      {/* Footer Container */}
+      <div className="footer-container">
+        <footer className="footer-content">
+          <div className="footer-content">
+            <form action="" className="email-form">
+              <input
+                type="email"
+                id="emailInput"
+                className="email-input-field"
+                placeholder="Enter your email"
+              />
+              <button type="button" className="subscribe-button">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
