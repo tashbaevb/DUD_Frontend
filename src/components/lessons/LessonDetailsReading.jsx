@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./Reading.css";
+import logo from "../media/logo.png";
+import user from "../media/user-icon.png";
 
 function LessonDetailsReading() {
   const { lessonId } = useParams();
@@ -67,7 +69,7 @@ function LessonDetailsReading() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <a className="navbar-brand" href="#">
-            <img src="logo.png" alt="Logo" height="30" />
+            <img src={logo} alt="Logo" height="30" />
           </a>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
@@ -78,7 +80,7 @@ function LessonDetailsReading() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#" data-toggle="sidebar">
-                  <img src="user-icon.png" alt="User" height="30" />
+                  <img src={user} alt="User" height="30" />
                 </a>
               </li>
             </ul>
@@ -147,7 +149,7 @@ function LessonDetailsReading() {
         </div>
         {result !== null && <p>Number of correct answers: {result}</p>}
         <Link to={`/lesson/${lessonId}/listening`}>
-          <button>Go to Listening Lesson</button>
+          <button className="button-79">Go to Listening Lesson</button>
         </Link>
       </main>
 

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./Listening.css";
+import logo from "../media/logo.png";
+import user from "../media/user-icon.png";
 
 function LessonDetailsListening() {
   const { lessonId } = useParams();
@@ -67,7 +69,7 @@ function LessonDetailsListening() {
             <span class="navbar-toggler-icon"></span>
           </button>
           <a class="navbar-brand" href="#">
-            <img src="logo.png" alt="Logo" height="30" />
+            <img src={logo} alt="Logo" height="30" />
           </a>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
@@ -78,7 +80,7 @@ function LessonDetailsListening() {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle="sidebar">
-                  <img src="user-icon.png" alt="User" height="30" />
+                  <img src={user} alt="User" height="30" />
                 </a>
               </li>
             </ul>
@@ -156,7 +158,9 @@ function LessonDetailsListening() {
           </button>
         </div>
         {result !== null && <p>Number of correct answers: {result}</p>}
-        <Link to={`/lessons/${levelId}`}>Back to Lesson List</Link>
+        <Link to={`/lessons/${levelId}`}>
+          <button className="button-79">Back to Lesson List</button>
+        </Link>
       </main>
 
       <div class="footer-container">
