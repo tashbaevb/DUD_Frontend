@@ -89,11 +89,15 @@ main {
 .selector-test .selected {
   background-color: rgb(134, 231, 100);
   color: #fff;
+  position: relative;
+  right: 10px;
 }
 
 .selector-test .notselected {
   background-color: rgb(223, 223, 223);
   color: #fff;
+  position: relative;
+  right: 10px;
 }
 
 .button-container {
@@ -164,4 +168,6 @@ main {
 }
 .question h2 {
   padding: 20px;
+  position: relative;
+  right: 20px;
 }

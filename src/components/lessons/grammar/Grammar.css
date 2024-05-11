@@ -165,6 +165,8 @@ main {
 }
 .question h2 {
   padding: 20px;
+  position: relative;
+  right: 10px;
 }
 .main-container audio {
   margin-top: 20px;

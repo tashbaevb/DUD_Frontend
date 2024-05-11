@@ -30,7 +30,7 @@ function BookDetail() {
   }
 
   return (
-    <>
+    <div className="main">
       <Navbar />
       <div className="container">
         <div className="book-header">
@@ -49,7 +49,7 @@ function BookDetail() {
         </div>
       </div>
       {/* <Footer /> */}
-    </>
+    </div>
   );
 }
 
