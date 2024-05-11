@@ -142,3 +142,12 @@ footer {
   display: flex;
   gap: 20px;
 }
+.nav-menu.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background-color: rgba(195, 182, 158, 0.9); /* Полупрозрачный цвет */
+  z-index: 9999; /* Очень высокий уровень z-index, чтобы элемент перекрывал все остальные */
+}

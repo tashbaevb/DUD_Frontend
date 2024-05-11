@@ -7,11 +7,14 @@ import user from "./media/user-icon.png";
 import photo from "./media/photo.jpg";
 import movie from "./media/movie.png";
 import library from "./media/library.png";
+import Navbar from "./slideBar/Navbar";
+
 
 const levelIndexes = {
   A1: 1,
   A2: 2,
   B1: 3,
+  B2 :4
 };
 
 function UserProfile() {
@@ -45,9 +48,13 @@ function UserProfile() {
   };
 
   return (
-    <div className="main">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <button
+    <div className="main_for_main_page">
+    
+
+      
+    <Navbar email={email} levelNames={levelNames} />
+
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -75,9 +82,9 @@ function UserProfile() {
               </a>
             </li>
           </ul>
-        </div>
-      </nav>
-
+        </div> */}
+     
+       
       <div className="container mt-4 text-center">
         <h2>Learn German - Start Your Journey</h2>
         <p>
@@ -85,7 +92,7 @@ function UserProfile() {
           start with the lessons tailored for you.
         </p>
       </div>
-
+        <div id ='wrapper_for_main_page'>
       <div className="container">
         <div className="card greeting-card">
           <div>
@@ -95,8 +102,15 @@ function UserProfile() {
             <img src={photo} alt="User Photo" />
           </div>
         </div>
-      </div>
 
+      </div>
+      <div id="levels">
+        <div id="A1">A1</div>
+        <div id="A2">A2</div>
+        <div id="B1">B1</div>
+        <div id="B2">B2</div>
+      </div>
+          </div>
       <div className="containerEnd">
         {levelNames.map((levelName, index) => (
           <div className="card level-card" key={index}>
