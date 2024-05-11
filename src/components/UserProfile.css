@@ -107,10 +107,11 @@
   gap: 10px;
 }
 .navbar {
-  z-index: 999; /* Ensure the navbar is behind the sidebar */
+  z-index: 9999; /* Ensure the navbar is behind the sidebar */
   width: 100%;
 }
 .user-sidebar {
+  z-index: 9999;
   position: fixed;
   top: 0;
   right: -300px; /* Initially hidden */
@@ -121,6 +122,7 @@
   transition: right 0.3s ease;
 }
 .user-sidebar.show {
+  z-index: 9999;
   right: 0;
 }
 .initial-logo {
@@ -151,3 +153,25 @@ footer {
   background-color: rgba(195, 182, 158, 0.9); /* Полупрозрачный цвет */
   z-index: 9999; /* Очень высокий уровень z-index, чтобы элемент перекрывал все остальные */
 }
+#wrapper_for_main_page{
+  display: flex;
+  flex-direction: row;
+}
+#wrapper_for_main_page #levels {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  justify-content: center; /* Выравнивание элементов по горизонтали */
+  align-items: center; /* Выравнивание элементов по вертикали */
+}
+
+#wrapper_for_main_page #levels div {
+  width: calc(50% - 40px); 
+  text-align: center;
+  font-size: 30px;
+  padding: 50px;
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin: 10px 5px; /* Отступ 10px сверху и снизу, 5px слева и справа */
+}
+
