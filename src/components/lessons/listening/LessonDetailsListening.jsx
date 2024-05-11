@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../navbar/Navbar";
 import Footer from "../../footer/Footer";
+import Modal from "../ResultModal";
 import "./Listening.css";
 
 function LessonDetailsListening() {
@@ -11,6 +12,7 @@ function LessonDetailsListening() {
   const [selectedOptions, setSelectedOptions] = useState({});
   const [result, setResult] = useState(null);
   const [lesson, setLesson] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchLesson = async () => {
@@ -44,9 +46,14 @@ function LessonDetailsListening() {
         optionsArray
       );
       setResult(response.data);
+      setShowModal(true);
     } catch (error) {
       console.error("Error checking result:", error);
     }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   if (!lesson) {
@@ -126,13 +133,18 @@ function LessonDetailsListening() {
             Submit
           </button>
         </div>
-        {result !== null && <p>Number of correct answers: {result}</p>}
-        <Link to={`/lessons/${levelId}`}>
-          <button className="button-79">Back to Lesson List</button>
-        </Link>
-      </main>
 
-      <Footer />
+        {showModal && (
+          <Modal
+            result={result}
+            onClose={handleCloseModal}
+            onNext={() => {
+              window.location.href = `/lessons/${levelId}`;
+            }}
+          />
+        )}
+      </main>
+      {/* <Footer /> */}
     </div>
   );
 }
