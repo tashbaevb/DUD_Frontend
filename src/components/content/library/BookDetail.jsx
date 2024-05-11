@@ -34,7 +34,13 @@ function BookDetail() {
       <Navbar />
       <div className="container">
         <div className="book-header">
-          <img src={Book} alt="suka" />
+          {book.filePath && (
+            <img
+              id="img-book"
+              src={`http://localhost:8086/${book.filePath}`}
+              alt="Bok Image"
+            />
+          )}
           <div className="book-info">
             <h1>
               {book.title} - {book.level.levelName}

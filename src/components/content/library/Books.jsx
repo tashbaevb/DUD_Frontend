@@ -29,7 +29,13 @@ function Library() {
         <div className="book-list">
           {books.map((book) => (
             <a key={book.id} href={`/book/${book.id}`} className="book">
-              <img src={Book} alt="Book 1" />
+              {book.filePath && (
+                <img
+                  id="img-book"
+                  src={`http://localhost:8086/${book.filePath}`}
+                  alt="Bok Image"
+                />
+              )}
               <div className="book-title">
                 {book.title} - {book.level.levelName}
               </div>
