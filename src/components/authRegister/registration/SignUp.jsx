@@ -23,7 +23,7 @@ function SignUp() {
       const response = await axios.post("http://localhost:8086/register", {
         email,
         password,
-        levelIds: languageLevels, // Отправляем выбранные уровни языка
+        levelIds: languageLevels,
       });
       const { access_token } = response.data;
 

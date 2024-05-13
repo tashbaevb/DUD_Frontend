@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import Navbar from "../../navbar/Navbar";
 
 function MoviesList() {
   const [movies, setMovies] = useState([]);
@@ -8,10 +9,10 @@ function MoviesList() {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('http://localhost:8086/movie/getAll');
+        const response = await axios.get("http://localhost:8086/movie/getAll");
         setMovies(response.data);
       } catch (error) {
-        console.error('Error fetching movies:', error);
+        console.error("Error fetching movies:", error);
       }
     };
 
@@ -20,6 +21,7 @@ function MoviesList() {
 
   return (
     <div>
+      <Navbar />
       <h2>Movies List</h2>
       <ul>
         {movies.map((movie) => (
