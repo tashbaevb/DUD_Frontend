@@ -1,3 +1,4 @@
+/* Style for the profile sidebar */
 .main {
   width: 100%;
   height: 100vh;
@@ -6,6 +7,7 @@
   gap: 40px;
   align-items: center;
   position: relative;
+  overflow-x: hidden; /* Добавлено свойство overflow-x */
 }
 
 .profile-sidebar {
@@ -89,9 +91,8 @@
   height: auto;
 }
 .containerEND {
+  margin-top: 500px;
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
 }
 .additional {
   background-color: #e9f4ff;
@@ -105,8 +106,12 @@
   flex-direction: column;
   gap: 10px;
 }
-
+.navbar {
+  z-index: 9999; /* Ensure the navbar is behind the sidebar */
+  width: 100%;
+}
 .user-sidebar {
+  z-index: 9999;
   position: fixed;
   top: 0;
   right: -300px; /* Initially hidden */
@@ -117,6 +122,7 @@
   transition: right 0.3s ease;
 }
 .user-sidebar.show {
+  z-index: 9999;
   right: 0;
 }
 .initial-logo {
@@ -137,4 +143,54 @@ footer {
   flex-direction: column;
   display: flex;
   gap: 20px;
+}
+.nav-menu.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background-color: rgba(195, 182, 158, 0.9); /* Полупрозрачный цвет */
+  z-index: 9999; /* Очень высокий уровень z-index, чтобы элемент перекрывал все остальные */
+}
+#wrapper_for_main_page {
+  display: flex;
+  flex-direction: row;
+}
+#wrapper_for_main_page #levels {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  justify-content: center; /* Выравнивание элементов по горизонтали */
+  align-items: center; /* Выравнивание элементов по вертикали */
+}
+
+#wrapper_for_main_page #levels div {
+  width: calc(40% - 10px);
+  text-align: center;
+  font-size: 30px;
+  /* margin: 10px; */
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 5px; /* Отступ 10px сверху и снизу, 5px слева и справа */
+}
+
+* {
+  max-width: 100%; /* Установка максимальной ширины */
+}
+
+.emirlan {
+  margin: 10px !important;
+}
+
+#libraryMain {
+  width: 720px;
+  position: relative;
+  left: 40px;
+}
+#moviesMain {
+  width: 720px;
+  position: 0;
+  left: 15px;
 }

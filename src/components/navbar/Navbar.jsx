@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import logo from "../../assets/logo.png";
 import user from "../../assets/user-icon.png";
+import "./Navbar.css";
 
 function Navbar() {
   const [userEmail, setUserEmail] = useState("");

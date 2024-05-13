@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import "./BookDetail.css";
 import Navbar from "../../navbar/Navbar";
 // import Footer from "../../footer/Footer";
-import Book from "./Ch_ai.jpg";
 
 function BookDetail() {
   const { bookId } = useParams();

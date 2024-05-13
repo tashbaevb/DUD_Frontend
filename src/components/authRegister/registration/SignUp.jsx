@@ -103,7 +103,7 @@ function SignUp() {
           <p id="text_after_but">
             Have an account?{" "}
             <span id="text_in_p">
-              <a href="/login">Log in</a>
+              <a href="/">Log in</a>
             </span>
           </p>
           {error && <div className="error">{error}</div>}

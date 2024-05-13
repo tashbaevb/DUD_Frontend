@@ -69,7 +69,7 @@ function Login() {
           <p className="text-after-button">
             Don't have an account?{" "}
             <span className="login-link">
-              <a href="/">Register</a>
+              <a href="/sign-up">Register</a>
             </span>
           </p>
           {error && <p className="error-message">{error}</p>}

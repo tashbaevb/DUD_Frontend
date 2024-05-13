@@ -3,7 +3,6 @@ import axios from "axios";
 import "./Books.css";
 import Navbar from "../../navbar/Navbar";
 // import Footer from "../../footer/Footer";
-import Book from "./Ch_ai.jpg";
 
 function Library() {
   const [books, setBooks] = useState([]);
