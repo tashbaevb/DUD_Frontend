@@ -38,7 +38,7 @@ function App() {
         <Route path="/books" element={<Books />} />
         <Route path="/book/:bookId" element={<BookDetail />} />
         <Route path="/movies" element={<MoviesList />} />
-        <Route path="/movie/:movieId" element={<MovieDetail />} />
+        <Route path="/movie/:movieId" element={<MovieDetail />} />~
       </Routes>
     </Router>
   );

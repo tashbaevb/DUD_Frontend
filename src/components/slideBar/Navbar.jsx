@@ -52,8 +52,19 @@ function Navbar({ email, levelNames }) {
     <>
       <div className='navbar'>
         <Link to='#' className='menu-bars'>
-          <span onClick={showSidebar}>{email}</span>
+          <span id = 'emailMain'>{email}</span>
         </Link>
+        <Link to='#' className='menu-bars'>
+          <span id = 'notesMainNav' onClick={showSidebar}>Note</span>
+        </Link>
+        <Link to='#' className='menu-bars'>
+          <span id = 'moviesMainNav' onClick={showSidebar}>Movies</span>
+        </Link>
+        <Link to='#' className='menu-bars'>
+          <span id = 'libraryMainNav' onClick={showSidebar}>library</span>
+        </Link>
+        
+        
         {/* Вывод уровней в спане */}
         {levelNames.map((name, index) => (
           <span id='levelNamesId' key={index}>{name}</span>

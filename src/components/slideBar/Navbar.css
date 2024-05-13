@@ -67,6 +67,19 @@
   align-items: center;
 }
 
-span {
+.navbar span {
   margin-left: 16px;
+}
+.navbar #notesMainNav{
+  position: relative;
+  left: 15px;
+}
+.navbar #moviesMainNav{
+  position: relative;
+  left: 1140px;
+}
+
+.navbar #libraryMainNav{
+  position: relative;
+  left: 1150px;
 }

@@ -7,7 +7,9 @@
   gap: 40px;
   align-items: center;
   position: relative;
+  overflow-x: hidden; /* Добавлено свойство overflow-x */
 }
+
 
 .profile-sidebar {
   position: fixed;
@@ -90,9 +92,9 @@
   height: auto;
 }
 .containerEND {
+  margin-top: 500px;
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
+
 }
 .additional {
   background-color: #e9f4ff;
@@ -165,7 +167,7 @@ footer {
 }
 
 #wrapper_for_main_page #levels div {
-  width: calc(50% - 40px); 
+  width: calc(40% - 10px); 
   text-align: center;
   font-size: 30px;
   padding: 50px;
@@ -173,5 +175,19 @@ footer {
   border-radius: 8px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   margin: 10px 5px; /* Отступ 10px сверху и снизу, 5px слева и справа */
+}
+
+*{
+  max-width: 100%; /* Установка максимальной ширины */
+}
+#libraryMain{
+  width: 720px;
+  position: relative;
+  left: 40px;
+}   
+#moviesMain{
+  width: 720px;
+  position: 0;
+  left: 15px;
 }
 

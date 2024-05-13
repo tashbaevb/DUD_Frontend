@@ -131,7 +131,7 @@ function UserProfile() {
         ))}
       </div>
       <div className="containerEND mt-4">
-        <div className="card text-center additional">
+        <div className="card text-center additional" id="moviesMain">
           <img src={movie} className="card-img-top mx-auto" alt="Movie" />
           <div className="card-body d-flex flex-column justify-content-center cont">
             <h5 className="card-title">Movies</h5>
@@ -148,7 +148,7 @@ function UserProfile() {
             </a>
           </div>
         </div>
-        <div className="card text-center additional">
+        <div className="card text-center additional" id="libraryMain">
           <img src={library} className="card-img-top mx-auto" alt="Library" />
           <div className="card-body d-flex flex-column justify-content-center cont">
             <h5 className="card-title">Library</h5>
