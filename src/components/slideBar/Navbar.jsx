@@ -1,93 +1,110 @@
+// Navbar.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import axios from 'axios'; 
+import NoteChat from './../notes/NoteChat'; 
+import Sidebar from '../content/Sidebar';
 
-function Navbar({ email, levelNames }) {
+function Navbar({ email, levelNames, levelIndexes }) {
   const [sidebar, setSidebar] = useState(false);
+  const [showNoteChat, setShowNoteChat] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [showNoteSidebar, setShowNoteSidebar] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+  
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
-{/* просто как пример*/}
+  const toggleNoteSidebar = () => setShowNoteSidebar(!showNoteSidebar);
+
+  const allLevels = ['A1', 'A2', 'B1', 'B2'];
+
   let sidebarData = [
     {
-      title: 'Hello, ',
+      title: `${email}`,
       path: '/',
       cName: 'nav-text'
     },
-    // { 
-    //   title: '1',
-    //   path: '/',
-    //   cName: 'nav-text'
-    // },
-    ...levelNames.map((level, index) => ({
+    ...allLevels.map(level => ({
       title: level,
-      path: `/${level.toLowerCase()}`, // Пример: '/reports'
+      path: levelNames.includes(level) ? `/lessons/${levelIndexes[level]}` : '', 
       cName: 'nav-text',
-      level: level // Можно добавить свойство level, если оно нужно
+      level: level
     }))
   ];
 
-  const handleEditEmail = () => {
-    // Предположим, что здесь вы выполняете операции для редактирования email
-    console.log("Edit email functionality here");
+  const addLevelToUser = async (levelName) => {
+    try {
+      const accessToken = localStorage.getItem("jwtToken");
+      const response = await axios.put(
+        "http://localhost:8086/user/update",
+        {
+          email: email,
+          levelIds: [levelIndexes[levelName]],
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      setSuccessMessage(`${levelName} level added successfully`);
+    } catch (error) {
+      console.error("Error adding level:", error);
+    } finally {
+      window.location.reload();
+    }
   };
 
-  // Изменение заголовка в зависимости от условия
-  if (sidebarData[1]) {
-    if (sidebarData[1].title === '1') {
-      sidebarData[1].title = 'A1';
+  const handleNonClickable = (levelName) => {
+    const confirmation = window.confirm(`${levelName} do you want it?`);
+    if (confirmation) {
+      addLevelToUser(levelName);
     }
-    if (sidebarData[1].title === '2') {
-      sidebarData[1].title = 'A2';
-    }
-    if (sidebarData[1].title === '3') {
-      sidebarData[1].title = 'B1';
-    }
-    if (sidebarData[1].title === '4') {
-      sidebarData[1].title = 'B2';
-    }
-  }
-
+  };
+  
   return (
     <>
       <div className='navbar'>
         <Link to='#' className='menu-bars'>
-          <span id = 'emailMain'>{email}</span>
+          <span id='emailMain' onClick={showSidebar}>{email}</span>
         </Link>
-        <Link to='#' className='menu-bars'>
-          <span id = 'notesMainNav' onClick={showSidebar}>Note</span>
+        <Link to='#' className='menu-bars' onClick={toggleNoteSidebar}>
+  <span id='notesMainNav'>Note</span>
+</Link>
+
+        <Link to='/movies' className='menu-bars'>
+          <span id='moviesMainNav'>Movies</span>
         </Link>
-        <Link to='#' className='menu-bars'>
-          <span id = 'moviesMainNav' onClick={showSidebar}>Movies</span>
+        <Link to='/books' className='menu-bars'>
+          <span id='libraryMainNav'>library</span>
         </Link>
-        <Link to='#' className='menu-bars'>
-          <span id = 'libraryMainNav' onClick={showSidebar}>library</span>
-        </Link>
-        
-        
-        {/* Вывод уровней в спане */}
-        {levelNames.map((name, index) => (
-          <span id='levelNamesId' key={index}>{name}</span>
-        ))}
-        {/* Кнопка "Edit" для редактирования email */}
-        {/* <button onClick={handleEditEmail}>Edit</button> */}
       </div>
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
         <ul className='nav-menu-items' onClick={showSidebar}>
-          <li className='navbar-toggle'>
-          </li>
-          {/* Используем созданный sidebarData */}
-          {sidebarData.map((item, index) => {
-            return (
-              <li key={index} className={item.cName}>
+          <li className='navbar-toggle'></li>
+          {sidebarData.map((item, index) => (
+            <li key={index} className={item.cName}>
+              {item.path ? (
                 <Link to={item.path}>
                   <span>{item.title}</span>
                 </Link>
-              </li>
-            );
-          })}
+              ) : (
+                <span onClick={() => handleNonClickable(item.level)}>{item.title}</span>
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
+      {showNoteSidebar && <Sidebar />}
+      {showNoteChat && <NoteChat />}
+      {successMessage && (
+        <div className="success-message">{successMessage}</div>
+      )}
     </>
   );
 }

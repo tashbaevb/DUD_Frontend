@@ -11,8 +11,10 @@ import Books from "./components/content/library/Books";
 import BookDetail from "./components/content/library/BookDetail";
 import MoviesList from "./components/content/movies/MoviesList";
 import MovieDetail from "./components/content/movies/MovieDetail";
-import NoteChat from "./components/content/NoteChat";
+// import NoteChat from "./components/content/NoteChat";
+import NoteChat from "./components/notes/NoteChat";
 import "./App.css";
+import Sidebar from "./components/content/Sidebar";
 
 function App() {
   return (
@@ -38,7 +40,8 @@ function App() {
         <Route path="/books" element={<Books />} />
         <Route path="/book/:bookId" element={<BookDetail />} />
         <Route path="/movies" element={<MoviesList />} />
-        <Route path="/movie/:movieId" element={<MovieDetail />} />~
+        <Route path="/movie/:movieId" element={<MovieDetail />} />
+        <Route path="/sidebar" element={<Sidebar />} />
       </Routes>
     </Router>
   );

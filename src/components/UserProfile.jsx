@@ -31,31 +31,32 @@ function UserProfile() {
           }
         );
         const { levelNames } = response.data;
+        console.log(levelNames)
         setLevelNames(levelNames.sort());
         
         // Move the code to set styles inside this useEffect
-        if (levelNames.includes(1)) {
+        if (levelNames.includes("A1")) {
           let vare = document.querySelector('#A1');
           vare.style.color = "white";
           vare.style.backgroundColor = "rgb(134, 231, 100)";
           vare.addEventListener("click", function(event){
             window.location.href = `/lessons/1`})
         }
-        if (levelNames.includes(2)) {
+        if (levelNames.includes("A2")) {
           let vare = document.querySelector('#A2');
           vare.style.color = "white";
           vare.style.backgroundColor = "rgb(134, 231, 100)";
           vare.addEventListener("click", function(event){
             window.location.href = `/lessons/2`})
         }
-        if (levelNames.includes(3)) {
+        if (levelNames.includes("B1")) {
           let vare = document.querySelector('#B1');
           vare.style.color = "white";
           vare.style.backgroundColor = "rgb(134, 231, 100)";
           vare.addEventListener("click", function(event){
             window.location.href = `/lessons/3`})
         }
-        if (levelNames.includes(4)) {
+        if (levelNames.includes("B2")) {
           let vare = document.querySelector('#B2');
           vare.style.color = "white";
           vare.style.backgroundColor = "rgb(134, 231, 100)";
@@ -70,18 +71,18 @@ function UserProfile() {
     fetchUserProfile();
   }, []);
   // для проверки
-  async function delayedFunction() {
-    await new Promise(resolve => setTimeout(resolve, 200)); // Ждем 2 милисекнуды вроде
-    let vare = document.querySelector('#A2');
-    vare.style.color = "rgb(255, 255, 255)";
-    vare.style.backgroundColor = "rgb(134, 231, 100)";
-    vare.addEventListener("click", function(event){
-      window.location.href = `/lessons/2`;
-    });
-  }
-  delayedFunction().then(() => {
-    console.log("Функция запущена после 5 секунд");
-  });
+  // async function delayedFunction() {
+  //   await new Promise(resolve => setTimeout(resolve, 200)); // Ждем 2 милисекнуды вроде
+  //   let vare = document.querySelector('#A2');
+  //   vare.style.color = "rgb(255, 255, 255)";
+  //   vare.style.backgroundColor = "rgb(134, 231, 100)";
+  //   vare.addEventListener("click", function(event){
+  //     window.location.href = `/lessons/2`;
+  //   });
+  // }
+  // delayedFunction().then(() => {
+  //   console.log("Функция запущена после 5 секунд");
+  // });
   
   const handleLevelClick = (levelName) => {
     const levelId = levelIndexes[levelName];
@@ -90,7 +91,7 @@ function UserProfile() {
 
   return (
     <div className="main_for_main_page">
-      <Navbar email={email} levelNames={levelNames} />
+      <Navbar email={email} levelNames={levelNames} levelIndexes={levelIndexes} />
       <div className="container mt-4 text-center">
         <h2>Learn German - Start Your Journey</h2>
         <p>
@@ -110,25 +111,13 @@ function UserProfile() {
           </div>
         </div>
         <div id="levels">
-          <div id="A1">A1</div>
-          <div id="A2">A2</div>
-          <div id="B1">B1</div>
-          <div id="B2">B2</div>
+          <div id="A1" className="leveCardsMain">A1</div>
+          <div id="A2" className="leveCardsMain">A2</div>
+          <div id="B1" className="leveCardsMain">B1</div>
+          <div id="B2" className="leveCardsMain ">B2</div>
         </div>
       </div>
       <div className="containerEnd">
-        {levelNames.map((levelName, index) => (
-          <div className="card level-card" key={index}>
-            <div className="card-body progress-card">
-              <button
-                onClick={() => handleLevelClick(levelName)}
-                className="btn btn-primary"
-              >
-                {levelName}
-              </button>
-            </div>
-          </div>
-        ))}
       </div>
       <div className="containerEND mt-4">
         <div className="card text-center additional" id="moviesMain">
