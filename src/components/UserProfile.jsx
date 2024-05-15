@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom"; 
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "./UserProfile.css";
-import logo from "./media/logo.png";
-import user from "./media/user-icon.png";
-import photo from "./media/photo.jpg";
-import movie from "./media/movie.png";
-import library from "./media/library.png";
-import Navbar from "./slideBar/Navbar";
+import photo from "../assets/photo.jpg";
+import movie from "../assets/movie.png";
+import library from "../assets/library.png";
+import Navbar from "./navbar/Navbar";
 
 const levelIndexes = {
   A1: 1,
   A2: 2,
   B1: 3,
+  B2: 4,
 };
 
 function UserProfile() {
@@ -31,37 +30,41 @@ function UserProfile() {
           }
         );
         const { levelNames } = response.data;
-        console.log(levelNames)
+        console.log(levelNames);
         setLevelNames(levelNames.sort());
-        
+
         // Move the code to set styles inside this useEffect
         if (levelNames.includes("A1")) {
-          let vare = document.querySelector('#A1');
+          let vare = document.querySelector("#A1");
           vare.style.color = "white";
           vare.style.backgroundColor = "rgb(134, 231, 100)";
-          vare.addEventListener("click", function(event){
-            window.location.href = `/lessons/1`})
+          vare.addEventListener("click", function (event) {
+            window.location.href = `/lessons/1`;
+          });
         }
         if (levelNames.includes("A2")) {
-          let vare = document.querySelector('#A2');
+          let vare = document.querySelector("#A2");
           vare.style.color = "white";
           vare.style.backgroundColor = "rgb(134, 231, 100)";
-          vare.addEventListener("click", function(event){
-            window.location.href = `/lessons/2`})
+          vare.addEventListener("click", function (event) {
+            window.location.href = `/lessons/2`;
+          });
         }
         if (levelNames.includes("B1")) {
-          let vare = document.querySelector('#B1');
+          let vare = document.querySelector("#B1");
           vare.style.color = "white";
           vare.style.backgroundColor = "rgb(134, 231, 100)";
-          vare.addEventListener("click", function(event){
-            window.location.href = `/lessons/3`})
+          vare.addEventListener("click", function (event) {
+            window.location.href = `/lessons/3`;
+          });
         }
         if (levelNames.includes("B2")) {
-          let vare = document.querySelector('#B2');
+          let vare = document.querySelector("#B2");
           vare.style.color = "white";
           vare.style.backgroundColor = "rgb(134, 231, 100)";
-          vare.addEventListener("click", function(event){
-            window.location.href = `/lessons/4`})
+          vare.addEventListener("click", function (event) {
+            window.location.href = `/lessons/4`;
+          });
         }
       } catch (error) {
         console.error("Error fetching user profile:", error);
@@ -70,33 +73,20 @@ function UserProfile() {
 
     fetchUserProfile();
   }, []);
-  // для проверки
-  // async function delayedFunction() {
-  //   await new Promise(resolve => setTimeout(resolve, 200)); // Ждем 2 милисекнуды вроде
-  //   let vare = document.querySelector('#A2');
-  //   vare.style.color = "rgb(255, 255, 255)";
-  //   vare.style.backgroundColor = "rgb(134, 231, 100)";
-  //   vare.addEventListener("click", function(event){
-  //     window.location.href = `/lessons/2`;
-  //   });
-  // }
-  // delayedFunction().then(() => {
-  //   console.log("Функция запущена после 5 секунд");
-  // });
-  
-  const handleLevelClick = (levelName) => {
-    const levelId = levelIndexes[levelName];
-    window.location.href = `/lessons/${levelId}`;
-  };
 
   return (
     <div className="main_for_main_page">
-      <Navbar email={email} levelNames={levelNames} levelIndexes={levelIndexes} />
+      <Navbar
+        email={email}
+        levelNames={levelNames}
+        levelIndexes={levelIndexes}
+      />
       <div className="container mt-4 text-center">
-        <h2>Learn German - Start Your Journey</h2>
+        <h2>Deutsch lernen - Beginnen Sie Ihre Reise</h2>
         <p>
-          Welcome to your German learning journey! Choose a proficiency level to
-          start with the lessons tailored for you.
+          Willkommen auf Ihrer Reise zum Deutschlernen! Wählen Sie ein
+          Sprachniveau und um mit dem auf Sie zugeschnittenen Unterricht zu
+          beginnen.
         </p>
       </div>
       <div id="wrapper_for_main_page">
@@ -111,14 +101,21 @@ function UserProfile() {
           </div>
         </div>
         <div id="levels">
-          <div id="A1" className="leveCardsMain">A1</div>
-          <div id="A2" className="leveCardsMain">A2</div>
-          <div id="B1" className="leveCardsMain">B1</div>
-          <div id="B2" className="leveCardsMain ">B2</div>
+          <div id="A1" className="leveCardsMain">
+            A1
+          </div>
+          <div id="A2" className="leveCardsMain">
+            A2
+          </div>
+          <div id="B1" className="leveCardsMain">
+            B1
+          </div>
+          <div id="B2" className="leveCardsMain ">
+            B2
+          </div>
         </div>
       </div>
-      <div className="containerEnd">
-      </div>
+      <div className="containerEnd"></div>
       <div className="containerEND mt-4">
         <div className="card text-center additional" id="moviesMain">
           <img src={movie} className="card-img-top mx-auto" alt="Movie" />

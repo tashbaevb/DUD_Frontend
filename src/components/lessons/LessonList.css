@@ -1,0 +1,22 @@
+.topic-card {
+  margin-bottom: 20px;
+}
+.topic-list {
+  list-style-type: none;
+  padding: 0;
+}
+.topic-item {
+  margin-bottom: 10px;
+}
+.topic-item a {
+  display: block;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+.topic-item a:hover {
+  background-color: #e2e6ea;
+}
