@@ -5,17 +5,9 @@ import "./LessonList.css";
 import Navbar from "../navbar/Navbar"; // Import Navbar
 import Footer from "../footer/Footer";
 
-const levelIndexes = {
-  A1: 1,
-  A2: 2,
-  B1: 3,
-  B2: 4,
-};
-
 function LessonList() {
   const { levelId } = useParams();
   const [lessons, setLessons] = useState([]);
-  const [levelNames, setLevelNames] = useState([]);
   const [email, setEmail] = useState("");
 
   useEffect(() => {
@@ -34,8 +26,8 @@ function LessonList() {
         const { data: profileData } = profileResponse;
 
         setLessons(lessonsData);
-        setLevelNames(profileData.levelNames.sort());
-        setEmail(profileData.email); // Set the email in state
+        // setLevelNames(profileData.levelNames.sort());
+        setEmail(profileData.email);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -46,12 +38,7 @@ function LessonList() {
 
   return (
     <>
-      <Navbar
-        email={email}
-        levelNames={levelNames}
-        levelIndexes={levelIndexes}
-      />{" "}
-      {/* Include Navbar component */}
+      <Navbar email={email} />
       <div className="main-lessonList">
         <h2>Lektionen für das Niveau {levelId}</h2>
 

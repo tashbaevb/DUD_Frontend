@@ -75,6 +75,10 @@ function UserProfile() {
     fetchUserProfile();
   }, []);
 
+  const handleLevelSelect = (levelId) => {
+    sessionStorage.setItem("selectedLevelId", levelId);
+  };
+
   return (
     <div className="main_for_main_page">
       <Navbar
@@ -102,7 +106,11 @@ function UserProfile() {
           </div>
         </div>
         <div id="levels">
-          <div id="A1" className="leveCardsMain">
+          <div
+            id="A1"
+            className="leveCardsMain"
+            onClick={handleLevelSelect("1")}
+          >
             A1
           </div>
           <div id="A2" className="leveCardsMain">
