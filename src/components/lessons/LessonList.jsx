@@ -53,7 +53,7 @@ function LessonList() {
       />{" "}
       {/* Include Navbar component */}
       <div className="main-lessonList">
-        <h2>Lessons for Level {levelId}</h2>
+        <h2>Lektionen für das Niveau {levelId}</h2>
 
         <div className="container mt-4">
           <div className="row">

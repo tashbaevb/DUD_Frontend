@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "./UserProfile.css";
+import Navbar from "./navbar/Navbar";
+import Footer from "./footer/Footer";
 import photo from "../assets/photo.jpg";
 import movie from "../assets/movie.png";
 import library from "../assets/library.png";
-import Navbar from "./navbar/Navbar";
 
 const levelIndexes = {
   A1: 1,
@@ -115,7 +116,6 @@ function UserProfile() {
           </div>
         </div>
       </div>
-      <div className="containerEnd"></div>
       <div className="containerEND mt-4">
         <div className="card text-center additional" id="moviesMain">
           <img src={movie} className="card-img-top mx-auto" alt="Movie" />
@@ -147,28 +147,18 @@ function UserProfile() {
           </div>
         </div>
       </div>
-      <div className="user-sidebar" id="userSidebar">
-        <h5>User Profile</h5>
-      </div>
       <footer className="bg-body-tertiary text-center text-lg-start mt-4">
         <div className="container p-4 pb-0">
           <form action="">
             <div className="row">
-              <div className="col-auto mb-4 mb-md-0">
-                <p className="pt-2">
-                  <strong>Sign up for our newsletter</strong>
-                </p>
-              </div>
               <div className="col-md-5 col-12 mb-4 mb-md-0">
                 <div data-mdb-input-init className="form-outline ">
                   <input
                     type="email"
                     id="form5Example22"
                     className="form-control"
+                    style={{ width: "400px" }}
                   />
-                  <label className="form-label" htmlFor="form5Example22">
-                    Email address
-                  </label>
                 </div>
               </div>
               <div className="col-auto mb-4 mb-md-0">
@@ -182,15 +172,6 @@ function UserProfile() {
               </div>
             </div>
           </form>
-        </div>
-        <div
-          className="text-center p-3"
-          style={{ backgroundColor: "rgba(112, 111, 111, 0.05 " }}
-        >
-          © 2020 Copyright:
-          <a className="text-body" href="https://mdbootstrap.com/">
-            MDBootstrap.com
-          </a>
         </div>
       </footer>
     </div>
