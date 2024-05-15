@@ -152,6 +152,21 @@ const Navbar = () => {
                     />
                     {level}
                   </label>
+                  <div className="menu-content">
+                    {["A1", "A2", "B1", "B2"].map((level, index) => (
+                      <ul key={index}>
+                        <li onClick={() => handleLevelClick(level)}>
+                          {userData.levelNames.includes(level) ? (
+                            <Link to={`/lessons/${levelIndexes[level]}`}>
+                              {level}
+                            </Link>
+                          ) : (
+                            `Add ${level} Level`
+                          )}
+                        </li>
+                      </ul>
+                    ))}
+                  </div>
                 </li>
               ))}
             </>
