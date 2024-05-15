@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function MovieDetail() {
   const { movieId } = useParams();
@@ -9,10 +9,12 @@ function MovieDetail() {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await axios.get(`http://localhost:8086/movie/getById/${movieId}`);
+        const response = await axios.get(
+          `http://localhost:8086/movie/getById/${movieId}`
+        );
         setMovie(response.data);
       } catch (error) {
-        console.error('Error fetching movie details:', error);
+        console.error("Error fetching movie details:", error);
       }
     };
 
@@ -30,7 +32,10 @@ function MovieDetail() {
       <p>Country: {movie.country}</p>
       <p>Level: {movie.level.levelName}</p>
       <video controls>
-        <source src={`http://localhost:8086${movie.filePath}`} type="video/mp4" />
+        <source
+          src={`http://localhost:8086${movie.filePath}`}
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
     </div>

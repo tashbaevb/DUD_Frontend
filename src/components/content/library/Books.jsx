@@ -4,25 +4,38 @@ import "./Books.css";
 import Navbar from "../../navbar/Navbar";
 // import Footer from "../../footer/Footer";
 
-function Library() {
+function Books() {
   const [books, setBooks] = useState([]);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    const fetchBooks = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8086/book/getAll");
-        setBooks(response.data);
+        const [bookResponse, profileResponse] = await Promise.all([
+          axios.get("http://localhost:8086/book/getAll"),
+          axios.get("http://localhost:8086/user/my-profile", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+            },
+          }),
+        ]);
+
+        const { data: bookData } = bookResponse;
+        const { data: profileData } = profileResponse;
+
+        setBooks(bookData);
+        setEmail(profileData.email);
       } catch (error) {
-        console.error("Error fetching books:", error);
+        console.error("Error fetching Data:", error);
       }
     };
 
-    fetchBooks();
+    fetchData();
   }, []);
 
   return (
     <>
-      <Navbar />
+      <Navbar email={email} />
       <div className="main-div-library">
         <h1>Library</h1>
         <div className="book-list">
@@ -47,4 +60,4 @@ function Library() {
   );
 }
 
-export default Library;
+export default Books;

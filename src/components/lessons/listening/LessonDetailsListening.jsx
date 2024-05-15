@@ -13,20 +13,31 @@ function LessonDetailsListening() {
   const [result, setResult] = useState(null);
   const [lesson, setLesson] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    const fetchLesson = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8086/lesson/get/${lessonId}/listening`
-        );
-        setLesson(response.data);
+        const [lessonResponse, profileResponse] = await Promise.all([
+          axios.get(`http://localhost:8086/lesson/get/${lessonId}/listening`),
+          axios.get("http://localhost:8086/user/my-profile", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+            },
+          }),
+        ]);
+
+        const { data: lessonData } = lessonResponse;
+        const { data: profileData } = profileResponse;
+
+        setLesson(lessonData);
+        setEmail(profileData.email);
       } catch (error) {
-        console.error("Error fetching lesson:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
-    fetchLesson();
+    fetchData();
   }, [lessonId]);
 
   const handleOptionClick = (questionId, optionId) => {
@@ -62,8 +73,7 @@ function LessonDetailsListening() {
 
   return (
     <div class="main-content">
-      <Navbar />
-
+      <Navbar email={email} />
       <main>
         <div class="main_container">
           <h1 id="big_title">{lesson.title}</h1>

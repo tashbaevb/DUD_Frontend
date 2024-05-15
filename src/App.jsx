@@ -11,8 +11,8 @@ import Books from "./components/content/library/Books";
 import BookDetail from "./components/content/library/BookDetail";
 import MoviesList from "./components/content/movies/MoviesList";
 import MovieDetail from "./components/content/movies/MovieDetail";
-import NoteChat from "./components/content/NoteChat";
 import "./App.css";
+import Sidebar from "./components/content/NoteChat";
 
 function App() {
   return (
@@ -21,7 +21,6 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/profile/:email" element={<UserProfile />} />
-        <Route path="/notes" element={<NoteChat />} />
         <Route path="/lessons/:levelId" element={<LessonList />} />
         <Route
           path="/lesson/:lessonId/grammar"
@@ -39,6 +38,7 @@ function App() {
         <Route path="/book/:bookId" element={<BookDetail />} />
         <Route path="/movies" element={<MoviesList />} />
         <Route path="/movie/:movieId" element={<MovieDetail />} />
+        <Route path="/sidebar" element={<Sidebar />} />
       </Routes>
     </Router>
   );

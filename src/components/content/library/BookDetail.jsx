@@ -8,20 +8,31 @@ import Navbar from "../../navbar/Navbar";
 function BookDetail() {
   const { bookId } = useParams();
   const [book, setBook] = useState(null);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    const fetchBook = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8086/book/getById/${bookId}`
-        );
-        setBook(response.data);
+        const [bookResponse, profileResponse] = await Promise.all([
+          axios.get(`http://localhost:8086/book/getById/${bookId}`),
+          axios.get("http://localhost:8086/user/my-profile", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+            },
+          }),
+        ]);
+
+        const { data: bookData } = bookResponse;
+        const { data: profileData } = profileResponse;
+
+        setBook(bookData);
+        setEmail(profileData.email);
       } catch (error) {
-        console.error("Error fetching book details:", error);
+        console.error("Error fetching book details or email:", error);
       }
     };
 
-    fetchBook();
+    fetchData();
   }, [bookId]);
 
   if (!book) {
@@ -30,7 +41,7 @@ function BookDetail() {
 
   return (
     <div className="main">
-      <Navbar />
+      <Navbar email={email} />
       <div className="container">
         <div className="book-header">
           {book.filePath && (

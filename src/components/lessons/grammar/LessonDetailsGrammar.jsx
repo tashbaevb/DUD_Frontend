@@ -8,24 +8,35 @@ import "./Grammar.css";
 function LessonDetailsGrammar() {
   const { lessonId } = useParams();
   const [lesson, setLesson] = useState(null);
+  const [email, setEmail] = useState("");
 
   const handleReadingLessonClick = () => {
     window.location.href = `/lesson/${lessonId}/reading`;
   };
 
   useEffect(() => {
-    const fetchLessonDetails = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8086/lesson/get/${lessonId}/grammar`
-        );
-        setLesson(response.data);
+        const [lessonResponse, profileResponse] = await Promise.all([
+          axios.get(`http://localhost:8086/lesson/get/${lessonId}/grammar`),
+          axios.get("http://localhost:8086/user/my-profile", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+            },
+          }),
+        ]);
+
+        const { data: lessonData } = lessonResponse;
+        const { data: profileData } = profileResponse;
+
+        setLesson(lessonData);
+        setEmail(profileData.email); // Set the email in state
       } catch (error) {
-        console.error("Error fetching grammar lesson details:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
-    fetchLessonDetails();
+    fetchData();
   }, [lessonId]);
 
   if (!lesson) {
@@ -34,8 +45,7 @@ function LessonDetailsGrammar() {
 
   return (
     <div className="main-content">
-      <Navbar />
-
+      <Navbar email={email} />
       <main>
         <div className="main_container">
           <h2 id="big_title">{lesson.title}</h2>
@@ -61,7 +71,6 @@ function LessonDetailsGrammar() {
           </button>
         </div>
       </main>
-
       <Footer />
     </div>
   );

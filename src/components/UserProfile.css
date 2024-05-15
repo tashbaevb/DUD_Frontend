@@ -168,7 +168,6 @@ footer {
   width: calc(40% - 10px);
   text-align: center;
   font-size: 30px;
-  /* margin: 10px; */
   padding: 50px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -179,11 +178,6 @@ footer {
 * {
   max-width: 100%; /* Установка максимальной ширины */
 }
-
-.emirlan {
-  margin: 10px !important;
-}
-
 #libraryMain {
   width: 720px;
   position: relative;
@@ -193,4 +187,8 @@ footer {
   width: 720px;
   position: 0;
   left: 15px;
+}
+
+.leveCardsMain {
+  margin: 20px !important;
 }
