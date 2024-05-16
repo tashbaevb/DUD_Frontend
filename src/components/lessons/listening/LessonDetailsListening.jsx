@@ -78,7 +78,7 @@ function LessonDetailsListening() {
           <h2 id="big_title">{lesson.title}</h2>
         </div>
         <div id="big_tetx">
-          <p className="pDescr">{lesson.description}</p>
+          <p className="p">{lesson.description}</p>
         </div>
         <div class="audioDiv">
           <audio id="audioPlayer" controls>
