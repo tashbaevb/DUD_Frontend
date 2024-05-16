@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Books.css";
+import "./books.css";
 import Navbar from "../../navbar/Navbar";
 
 function Books() {
