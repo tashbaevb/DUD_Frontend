@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./books.css";
-import Navbar from "../../navbar/Navbar";
+import "./Books.css";
+import Navbar from "../navbar/Navbar";
 
 function Books() {
   const [books, setBooks] = useState([]);
