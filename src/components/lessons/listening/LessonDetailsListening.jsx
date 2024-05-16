@@ -75,10 +75,10 @@ function LessonDetailsListening() {
       <Navbar email={email} />
       <main>
         <div class="main_container">
-          <h1 id="big_title">{lesson.title}</h1>
+          <h2 id="big_title">{lesson.title}</h2>
         </div>
         <div id="big_tetx">
-          <p>{lesson.description}</p>
+          <p className="pDescr">{lesson.description}</p>
         </div>
         <div class="audioDiv">
           <audio id="audioPlayer" controls>

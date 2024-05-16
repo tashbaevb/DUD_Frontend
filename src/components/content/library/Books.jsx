@@ -36,7 +36,7 @@ function Books() {
     <>
       <Navbar email={email} />
       <div className="main-div-library">
-        <h1>Library</h1>
+        <h1>Bibliothek</h1>
         <div className="book-list">
           {books.map((book) => (
             <a key={book.id} href={`/book/${book.id}`} className="book">

@@ -39,8 +39,11 @@ function LessonList() {
     <div className="mainLessonList">
       <Navbar email={email} />
       <div className="main-lessonList">
-        <h2>Lektionen für das Niveau {levelId}</h2>
-        <div className="container mt-4">
+        <h2 className="h2">Lektionen für das Niveau {levelId}</h2>
+        <div
+          className="container2"
+          style={{ maxWidth: "90% !important", margin: "0 auto !important" }}
+        >
           <div className="row">
             {lessons.map((lesson) => (
               <div key={lesson.id} className="col-md-4">
@@ -51,6 +54,7 @@ function LessonList() {
                     <Link
                       to={`/lesson/${lesson.id}/grammar`}
                       className="btn btn-primary"
+                      style={{ width: "100%" }}
                     >
                       Start
                     </Link>

@@ -28,3 +28,28 @@
 .mainLessonList {
   height: 100vh;
 }
+.container2 {
+  max-width: 90% !important;
+  margin: 0 auto !important;
+}
+
+.col-md-4 {
+  margin-bottom: 32px !important;
+}
+
+.h2 {
+  font-size: 2rem;
+  margin: 0 auto !important;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.card-title {
+  margin-bottom: 0.75rem !important;
+}
+
+p {
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+}

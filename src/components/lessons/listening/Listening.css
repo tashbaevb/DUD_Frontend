@@ -14,16 +14,6 @@ main {
   flex: 1 0 auto;
 }
 
-#bit_title {
-  color: rgb(0, 0, 0);
-  font-family: Poppins;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 54px;
-  letter-spacing: 0%;
-  text-align: justify;
-}
-
 .main_container {
   display: flex;
   justify-content: center;
@@ -31,20 +21,21 @@ main {
   margin-top: 20px;
 }
 
-.main_container h1 {
-  margin-bottom: 20px;
-  font-weight: 500;
+.main_container h2 {
+  font-size: 2rem;
+  margin: 0 auto !important;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
 }
 
-#big_text {
-  margin: 8px;
-  color: rgb(0, 0, 0);
-  font-family: Poppins;
-  font-size: 24px;
-  font-weight: normal;
-  line-height: 34px;
-  letter-spacing: 0%;
-  margin: 0 50px 0 50px;
+.pDescr {g
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  max-height: 500px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
 }
 
 .test-questions {
@@ -63,7 +54,6 @@ main {
 
 .question {
   padding: 30px;
-  /* border: 1px solid #ccc; */
   margin: 30px;
   margin-left: 80px;
   margin-right: 80px;
@@ -182,7 +172,7 @@ main {
 
 /* Стили для контролов аудио */
 #audioPlayer::-webkit-media-controls {
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   border-radius: 5px;
 }
 
@@ -192,10 +182,6 @@ main {
 
 #audioPlayer::-webkit-media-controls-play-button:hover {
   color: #0056b3;
-}
-
-#audioPlayer::-webkit-media-controls-timeline {
-  background-color: #ced4da;
 }
 
 #audioPlayer::-webkit-media-controls-current-time-display {

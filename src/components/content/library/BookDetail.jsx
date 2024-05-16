@@ -35,7 +35,7 @@ function BookDetail() {
   }, [bookId]);
 
   if (!book) {
-    return <div>Loading...</div>;
+    return <div>Laden...</div>;
   }
 
   return (
@@ -54,7 +54,7 @@ function BookDetail() {
             <h1>
               {book.title} - {book.level.levelName}
             </h1>
-            <p>Author: {book.author}</p>
+            <p>Autor: {book.author}</p>
           </div>
         </div>
         <div className="book-content">
