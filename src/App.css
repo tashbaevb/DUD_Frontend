@@ -5,9 +5,14 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+
 body {
   width: 100vw;
   height: 100vh;
   position: relative;
   padding: 0% !important;
+}
+
+.mainApp {
+  margin-bottom: 50px !important;
 }

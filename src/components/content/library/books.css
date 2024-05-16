@@ -19,7 +19,7 @@ h1 {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 5px;
-  margin: 30px;
+  margin: 30px !important;
   width: 300px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;

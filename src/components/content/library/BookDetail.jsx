@@ -3,7 +3,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./BookDetail.css";
 import Navbar from "../../navbar/Navbar";
-// import Footer from "../../footer/Footer";
 
 function BookDetail() {
   const { bookId } = useParams();
@@ -40,9 +39,9 @@ function BookDetail() {
   }
 
   return (
-    <div className="main">
+    <div className="mainBookDetail">
       <Navbar email={email} />
-      <div className="container">
+      <div className="containerBookDetail">
         <div className="book-header">
           {book.filePath && (
             <img
@@ -64,7 +63,6 @@ function BookDetail() {
           <p>{book.content}</p>
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }

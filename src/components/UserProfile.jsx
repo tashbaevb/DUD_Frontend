@@ -98,7 +98,7 @@ function UserProfile() {
         <div className="container cont3">
           <div className="card greeting-card">
             <div>
-              <h3>Hi {email}, Good Afternoon!</h3>
+              <h3>Hallo {email}!</h3>
             </div>
             <div>
               <img src={photo} alt="User Photo" />
@@ -128,60 +128,34 @@ function UserProfile() {
         <div className="card text-center additional" id="moviesMain">
           <img src={movie} className="card-img-top mx-auto" alt="Movie" />
           <div className="card-body d-flex flex-column justify-content-center cont">
-            <h5 className="card-title">Movies</h5>
+            <h5 className="card-title">Filme</h5>
             <p className="card-text">
-              Explore our collection of German movies to practice your language
-              skills.
+              Entdecken Sie unsere Sammlung von deutschen Filmen zur
+              Verbesserung Ihrer Sprachkenntnisse
             </p>
             <a
               href="/movies"
               className="btn btn-primary mx-auto "
               style={{ marginTop: "20px !important" }}
             >
-              Explore
+              Erkunden
             </a>
           </div>
         </div>
         <div className="card text-center additional" id="libraryMain">
           <img src={library} className="card-img-top mx-auto" alt="Library" />
           <div className="card-body d-flex flex-column justify-content-center cont">
-            <h5 className="card-title">Library</h5>
+            <h5 className="card-title">Bibliothek</h5>
             <p className="card-text">
-              Visit our library for a wide range of German books and resources.
+              In unserer Bibliothek finden Sie eine große Auswahl an deutschen
+              Büchern und Ressourcen.
             </p>
             <Link to="/books" className="btn btn-primary mx-auto">
-              Visit
+              Besuchen
             </Link>
           </div>
         </div>
       </div>
-      <footer className="bg-body-tertiary text-center text-lg-start mt-4">
-        <div className="container p-4 pb-0">
-          <form action="">
-            <div className="row">
-              <div className="col-md-5 col-12 mb-4 mb-md-0">
-                <div data-mdb-input-init className="form-outline ">
-                  <input
-                    type="email"
-                    id="form5Example22"
-                    className="form-control"
-                    style={{ width: "400px" }}
-                  />
-                </div>
-              </div>
-              <div className="col-auto mb-4 mb-md-0">
-                <button
-                  data-mdb-ripple-init
-                  type="button"
-                  className="btn btn-primary mb-4"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </footer>
     </div>
   );
 }

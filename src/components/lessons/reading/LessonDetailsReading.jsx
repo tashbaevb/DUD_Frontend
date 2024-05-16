@@ -72,7 +72,6 @@ function LessonDetailsReading() {
   return (
     <div className="main-content">
       <Navbar email={email} />
-
       <main>
         <div className="main_container">
           <h1 id="big_title">{lesson.title}</h1>

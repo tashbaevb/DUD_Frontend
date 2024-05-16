@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../navbar/Navbar";
-import Footer from "../../footer/Footer";
 import Modal from "../ResultModal";
 import "./Listening.css";
 
@@ -154,7 +153,6 @@ function LessonDetailsListening() {
           />
         )}
       </main>
-      {/* <Footer /> */}
     </div>
   );
 }

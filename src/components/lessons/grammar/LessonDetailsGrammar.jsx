@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../navbar/Navbar";
-import Footer from "../../footer/Footer";
 import "./Grammar.css";
 
 function LessonDetailsGrammar() {
@@ -44,7 +43,7 @@ function LessonDetailsGrammar() {
   }
 
   return (
-    <div className="main-content">
+    <div className="mainGrammar">
       <Navbar email={email} />
       <main>
         <div className="main_container">
@@ -71,7 +70,6 @@ function LessonDetailsGrammar() {
           </button>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

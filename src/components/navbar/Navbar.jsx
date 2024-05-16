@@ -9,7 +9,6 @@ function Navbar({ email, levelNames, levelIndexes }) {
   const [sidebar, setSidebar] = useState(false);
   const [successMessage, setSuccessMessage] = useState(null);
   const [showNoteSidebar, setShowNoteSidebar] = useState(false);
-  // const [userData, setUserData] = useState({ email: "", levelNames: [] });
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -83,10 +82,10 @@ function Navbar({ email, levelNames, levelIndexes }) {
 
         <div>
           <Link to="/movies" className="menu-bars">
-            <span id="moviesMainNav">Movies</span>
+            <span id="moviesMainNav">Filme</span>
           </Link>
           <Link to="/books" className="menu-bars">
-            <span id="libraryMainNav">library</span>
+            <span id="libraryMainNav">Bibliothek</span>
           </Link>
           <Link className="navbar-brand" to={`/profile/${email}`}>
             <img src={logo} alt="Logo" height="30" />

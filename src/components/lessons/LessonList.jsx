@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./LessonList.css";
-import Navbar from "../navbar/Navbar"; // Import Navbar
-import Footer from "../footer/Footer";
+import Navbar from "../navbar/Navbar";
 
 function LessonList() {
   const { levelId } = useParams();
@@ -37,11 +36,10 @@ function LessonList() {
   }, [levelId]);
 
   return (
-    <>
+    <div className="mainLessonList">
       <Navbar email={email} />
       <div className="main-lessonList">
         <h2>Lektionen für das Niveau {levelId}</h2>
-
         <div className="container mt-4">
           <div className="row">
             {lessons.map((lesson) => (
@@ -63,8 +61,7 @@ function LessonList() {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </div>
   );
 }
 
