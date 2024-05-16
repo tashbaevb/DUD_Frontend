@@ -86,7 +86,7 @@ function UserProfile() {
         levelNames={levelNames}
         levelIndexes={levelIndexes}
       />
-      <div className="container mt-4 text-center">
+      <div className="container cont2 mt-4 text-center">
         <h2>Deutsch lernen - Beginnen Sie Ihre Reise</h2>
         <p>
           Willkommen auf Ihrer Reise zum Deutschlernen! Wählen Sie ein
@@ -95,7 +95,7 @@ function UserProfile() {
         </p>
       </div>
       <div id="wrapper_for_main_page">
-        <div className="container">
+        <div className="container cont3">
           <div className="card greeting-card">
             <div>
               <h3>Hi {email}, Good Afternoon!</h3>

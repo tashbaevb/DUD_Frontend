@@ -2,17 +2,25 @@
   background-color: #6495ed;
   height: 80px;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
 }
 
+/* .navbar > div > a {
+  margin: 10px;
+  display: inline-block;
+} */
+
+.navbar > div {
+  display: flex;
+  gap: 20px;
+}
 .menu-bars {
-  margin-left: 2rem;
   font-size: 2rem;
   background: none;
 }
 .menu-bars span {
-  color: #edbc64;
+  color: yellow;
 }
 
 .nav-menu {
@@ -68,21 +76,4 @@
   display: flex;
   justify-content: start;
   align-items: center;
-}
-
-.navbar span {
-  margin-left: 16px;
-}
-.navbar #notesMainNav {
-  position: relative;
-  left: 15px;
-}
-.navbar #moviesMainNav {
-  position: relative;
-  left: 1140px;
-}
-
-.navbar #libraryMainNav {
-  position: relative;
-  left: 1150px;
 }

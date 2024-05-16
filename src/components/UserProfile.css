@@ -10,7 +10,7 @@
   gap: 40px;
   align-items: center;
   position: relative;
-  overflow-x: hidden; /* Добавлено свойство overflow-x */
+  overflow-x: hidden;
 }
 
 .profile-sidebar {
@@ -21,8 +21,19 @@
   width: 250px;
   background-color: #f8f9fa;
   padding: 20px;
-  z-index: 1000; /* Ensure the sidebar stays on top */
+  z-index: 1000;
 }
+
+.cont2 {
+  margin: auto !important;
+  margin-bottom: 30px !important;
+  margin-top: 30px !important;
+}
+
+.cont3 {
+  margin-left: 30px !important;
+}
+
 .container {
   max-width: 840px;
   width: 70%;
@@ -65,14 +76,15 @@
   color: #007bff;
 }
 
-/* Adjustments for images and cards */
 .initial-logo {
   display: none;
 }
+
 .level-card {
   margin-bottom: 20px;
   display: flex;
 }
+
 .greeting-card {
   background-color: #e9f4ff;
   padding: 20px;
@@ -82,21 +94,26 @@
   align-items: center;
   justify-content: space-around;
 }
+
 .greeting-card h3 {
   margin-bottom: 10px;
 }
+
 .greeting-card img {
   max-width: 400px;
   border-radius: 50%;
 }
+
 .card-img-top {
   max-width: 200px;
   height: auto;
 }
+
 .containerEND {
   margin-top: 500px;
   display: flex;
 }
+
 .additional {
   background-color: #e9f4ff;
   width: 400px;
@@ -109,10 +126,13 @@
   flex-direction: column;
   gap: 10px;
 }
+
 .navbar {
-  z-index: 9999; /* Ensure the navbar is behind the sidebar */
+  z-index: 9999;
   width: 100%;
+  overflow-x: hidden;
 }
+
 .user-sidebar {
   z-index: 9999;
   position: fixed;
@@ -124,13 +144,16 @@
   padding: 20px;
   transition: right 0.3s ease;
 }
+
 .user-sidebar.show {
   z-index: 9999;
   right: 0;
 }
+
 .initial-logo {
   display: none;
 }
+
 footer {
   width: 100%;
   position: relative;
@@ -146,19 +169,22 @@ footer {
   display: flex;
   gap: 20px;
 }
+
 .nav-menu.active {
   position: fixed;
   top: 0;
   left: 0;
   width: 20%;
   height: 100%;
-  background-color: rgba(195, 182, 158, 0.9); /* Полупрозрачный цвет */
-  z-index: 9999; /* Очень высокий уровень z-index, чтобы элемент перекрывал все остальные */
+  background-color: rgba(195, 182, 158, 0.9);
+  z-index: 9999;
 }
+
 #wrapper_for_main_page {
   display: flex;
   flex-direction: row;
 }
+
 #wrapper_for_main_page #levels {
   display: flex;
   flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
@@ -178,14 +204,13 @@ footer {
 }
 
 #libraryMain {
-  width: 720px;
+  width: 680px;
   position: relative;
-  left: 40px;
+  left: 50px;
 }
 #moviesMain {
-  width: 720px;
-  position: 0;
-  left: 15px;
+  width: 680px;
+  left: 30px;
 }
 
 .leveCardsMain {

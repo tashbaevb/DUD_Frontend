@@ -70,24 +70,28 @@ function Navbar({ email, levelNames, levelIndexes }) {
   return (
     <>
       <div className="navbar">
-        <Link to="#" className="menu-bars">
-          <span id="emailMain" onClick={showSidebar}>
-            {email}
-          </span>
-        </Link>
-        <Link to="#" className="menu-bars" onClick={toggleNoteSidebar}>
-          <span id="notesMainNav">Note</span>
-        </Link>
+        <div>
+          <Link to="#" className="menu-bars">
+            <span id="emailMain" onClick={showSidebar}>
+              {email}
+            </span>
+          </Link>
+          <Link to="#" className="menu-bars" onClick={toggleNoteSidebar}>
+            <span id="notesMainNav">Note</span>
+          </Link>
+        </div>
 
-        <Link to="/movies" className="menu-bars">
-          <span id="moviesMainNav">Movies</span>
-        </Link>
-        <Link to="/books" className="menu-bars">
-          <span id="libraryMainNav">library</span>
-        </Link>
-        <Link className="navbar-brand" to={`/profile/${email}`}>
-          <img src={logo} alt="Logo" height="30" />
-        </Link>
+        <div>
+          <Link to="/movies" className="menu-bars">
+            <span id="moviesMainNav">Movies</span>
+          </Link>
+          <Link to="/books" className="menu-bars">
+            <span id="libraryMainNav">library</span>
+          </Link>
+          <Link className="navbar-brand" to={`/profile/${email}`}>
+            <img src={logo} alt="Logo" height="30" />
+          </Link>
+        </div>
       </div>
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-menu-items" onClick={showSidebar}>
