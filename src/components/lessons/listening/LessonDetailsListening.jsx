@@ -71,16 +71,16 @@ function LessonDetailsListening() {
   }
 
   return (
-    <div class="main-content">
+    <div className="main-content">
       <Navbar email={email} />
       <main>
-        <div class="main_container">
+        <div className="main_container">
           <h2 id="big_title">{lesson.title}</h2>
         </div>
         <div id="big_tetx">
-          <p className="p">{lesson.description}</p>
+          <p className="pDescr">{lesson.description}</p>
         </div>
-        <div class="audioDiv">
+        <div className="audioDiv">
           <audio id="audioPlayer" controls>
             <source
               src={`http://localhost:8086/${lesson.mp3FilePath}`}

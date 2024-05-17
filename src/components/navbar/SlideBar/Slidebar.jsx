@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./NoteChat.css";
+import "./Slidebar.css";
+// Assuming you have an avatar image
 
 function Sidebar() {
   const [notes, setNotes] = useState([]);
@@ -10,7 +11,7 @@ function Sidebar() {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedNoteId, setSelectedNoteId] = useState(null);
   const token = localStorage.getItem("jwtToken");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const fetchNotes = async () => {
     try {
@@ -26,7 +27,6 @@ function Sidebar() {
   };
 
   useEffect(() => {
-    setSidebarOpen(true); // Устанавливаем начальное состояние сайдбара в открытом положении
     fetchNotes();
   }, []);
 
@@ -94,16 +94,19 @@ function Sidebar() {
     setSelectedNoteId(noteId);
   };
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
   };
 
   return (
-    <div className="SideBar">
-      <div className={`nav-menu ${sidebarOpen ? "active" : ""}`}>
-        <div className="note-sidebar">
-          <div className="note-container">
-            <h2 id="titleSidebar">Заметки</h2>
+    <div>
+      {modalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={toggleModal}>
+              &times;
+            </span>
+            <h2>Заметки</h2>
             <div>
               {notes.map((note) => (
                 <div
@@ -123,22 +126,23 @@ function Sidebar() {
                 </div>
               ))}
             </div>
-            <input
-              type="text"
-              value={newNote}
-              onChange={(e) => setNewNote(e.target.value)}
-            />
-            <button onClick={handleSendNote}>Отправить заметку</button>
+            <div className="note-input">
+              <input
+                type="text"
+                value={newNote}
+                onChange={(e) => setNewNote(e.target.value)}
+              />
+              <button onClick={handleSendNote}>Отправить заметку</button>
+            </div>
             {showOptions && (
               <div className="note-options">
                 <button onClick={handleEditNote}>Сохранить изменения</button>
                 <button onClick={handleDeleteNote}>Удалить заметку</button>
               </div>
             )}
-            <button onClick={toggleSidebar}>Выйти</button>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

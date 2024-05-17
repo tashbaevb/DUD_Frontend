@@ -1,107 +1,123 @@
-/* notes.css */
-.Sidebar.note-sidebar {
+/* NoteChat.css */
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
-  top: 0;
-  left: -300px;
-  width: 300px;
-  height: 100%;
-  background-color: #333;
-  transition: left 0.3s ease-in-out;
   z-index: 1000;
-  overflow-y: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.Sidebar .note-container {
+.modal-content {
+  background-color: #2c3e50;
+  color: #ecf0f1;
   padding: 20px;
-  color: #fff;
-}
-.Sidebar .note-container input{
-  background-color: aqua;
+  border-radius: 10px;
+  width: 500px;
+  max-width: 100%;
+  position: relative;
 }
 
-.Sidebar .note {
+.close {
+  color: #ecf0f1;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #95a5a6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
   margin-bottom: 20px;
 }
 
-.Sidebar .note input[type="text"] {
-  width: 100%;
+.note {
+  margin-bottom: 20px;
   padding: 10px;
-  margin-bottom: 10px;
+  background-color: #34495e;
   border-radius: 5px;
-  border: none;
+  cursor: pointer;
 }
 
-.Sidebar .note span {
+.note input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #34495e;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+.note span {
   display: block;
   padding: 10px;
   border-radius: 5px;
-  background-color: #555;
+  background-color: #2c3e50;
+  color: #ecf0f1;
 }
 
-.Sidebar .note-options {
+.note-input {
+  display: flex;
   margin-top: 20px;
 }
 
-.Sidebar .note-options button {
-  margin-right: 10px;
+.note-input input {
+  flex: 1;
   padding: 10px;
-  background-color: #007bff;
-  color: #fff;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #34495e;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+.note-input button {
+  padding: 10px 15px;
+  background-color: #27ae60;
+  color: #ecf0f1;
   border: none;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.Sidebar .note-options button:hover {
-  background-color: #0056b3;
+.note-input button:hover {
+  background-color: #229954;
 }
 
-.Sidebar .navbar-toggle {
+.note-options {
+  margin-top: 10px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-.Sidebar .navbar-toggle span {
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 20px;
-}
-
-.Sidebar .nav-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.Sidebar .nav-menu.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Additional Styling */
-.Sidebar .note span {
-  color: #fff;
-  font-size: 16px;
-}
-
-.Sidebar .note-options button {
-  background-color: #007bff;
-  color: #fff;
+.note-options button {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: #ecf0f1;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  padding: 8px 16px;
-  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+  margin: 10px !important;
 }
 
-.Sidebar .note-options button:hover {
-  background-color: #0056b3;
+.note-options button:hover {
+  background-color: #2980b9;
+}
+#titleNotesda{
+  color: #000;
 }
