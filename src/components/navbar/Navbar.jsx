@@ -100,9 +100,9 @@ function Navbar({ email, levelNames, levelIndexes }) {
         <div className="sidebar-header">
           <img src={avatar} alt="Avatar" className="avatar" />
           <span className="email">{email}</span>
-          <button className="logout-button" onClick={handleLogout}>
+          {/* <button className="logout-button" onClick={handleLogout}>
             Logout
-          </button>
+          </button> */}
           <img
             src={closeIcon}
             alt="Close"
@@ -125,8 +125,12 @@ function Navbar({ email, levelNames, levelIndexes }) {
               )}
             </div>
           ))}
-          <button className="close-sidebar-button" onClick={showSidebar}>
-            Close
+          <button
+            className="logout-button"
+            onClick={handleLogout}
+            // style={{ marginTop: "15px !important;" }}
+          >
+            Logout
           </button>
         </div>
       </nav>
