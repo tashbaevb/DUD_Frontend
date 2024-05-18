@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import axios from "axios";
-import NotesModal from "../content/NotesModal"; // Assuming NotesModal is in the correct path
+import NotesModal from "../content/NotesModal";
 import logo from "../../assets/logo.png";
 import avatar from "../../assets/user-icon.png";
+import closeIcon from "../../assets/close.png";
 
 function Navbar({ email, levelNames, levelIndexes }) {
   const [sidebar, setSidebar] = useState(false);
@@ -16,13 +17,8 @@ function Navbar({ email, levelNames, levelIndexes }) {
   const toggleNoteModal = () => setShowNoteModal(!showNoteModal);
 
   const allLevels = ["A1", "A2", "B1", "B2"];
-  
+
   let sidebarData = [
-    {
-      title: `${email}`,
-      path: "/",
-      cName: "nav-text",
-    },
     ...allLevels.map((level) => ({
       title: level,
       path:
@@ -60,7 +56,9 @@ function Navbar({ email, levelNames, levelIndexes }) {
   };
 
   const handleNonClickable = (levelName) => {
-    const confirmation = window.confirm(`Do you want to add ${levelName} level?`);
+    const confirmation = window.confirm(
+      `Do you want to add ${levelName} level?`
+    );
     if (confirmation) {
       addLevelToUser(levelName);
     }
@@ -68,7 +66,7 @@ function Navbar({ email, levelNames, levelIndexes }) {
 
   const handleLogout = () => {
     localStorage.removeItem("jwtToken");
-    window.location.href = "/login"; // Redirect to login page
+    window.location.href = "/";
   };
 
   return (
@@ -79,7 +77,7 @@ function Navbar({ email, levelNames, levelIndexes }) {
             <span id="emailMain">{email}</span>
           </Link>
           <Link to="#" className="menu-bars" onClick={toggleNoteModal}>
-            <span id="notesMainNav">Note</span>
+            <span id="notesMainNav">Notizen</span>
           </Link>
         </div>
 
@@ -102,7 +100,15 @@ function Navbar({ email, levelNames, levelIndexes }) {
         <div className="sidebar-header">
           <img src={avatar} alt="Avatar" className="avatar" />
           <span className="email">{email}</span>
-          <button className="logout-button" onClick={handleLogout}>Logout</button>
+          <button className="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
+          <img
+            src={closeIcon}
+            alt="Close"
+            className="close-sidebar-icon"
+            onClick={showSidebar}
+          />
         </div>
         <div className="level-cards">
           {sidebarData.map((item, index) => (
@@ -119,10 +125,14 @@ function Navbar({ email, levelNames, levelIndexes }) {
               )}
             </div>
           ))}
-          <button className="close-sidebar-button" onClick={showSidebar}>Close</button>
+          <button className="close-sidebar-button" onClick={showSidebar}>
+            Close
+          </button>
         </div>
       </nav>
-      {showNoteModal && <NotesModal showModal={showNoteModal} toggleModal={toggleNoteModal} />}
+      {showNoteModal && (
+        <NotesModal showModal={showNoteModal} toggleModal={toggleNoteModal} />
+      )}
       {successMessage && (
         <div className="success-message">{successMessage}</div>
       )}

@@ -7,7 +7,6 @@ function NotesModal({ showModal, toggleModal }) {
   const [newNote, setNewNote] = useState("");
   const [editedNoteId, setEditedNoteId] = useState(null);
   const [editedNote, setEditedNote] = useState("");
-  const [showOptions, setShowOptions] = useState(false);
   const [selectedNoteId, setSelectedNoteId] = useState(null);
   const token = localStorage.getItem("jwtToken");
 
@@ -29,6 +28,8 @@ function NotesModal({ showModal, toggleModal }) {
   }, []);
 
   const handleSendNote = async () => {
+    if (newNote.trim() === "") return;
+
     try {
       await axios.post(
         "http://localhost:8086/note",
@@ -47,9 +48,11 @@ function NotesModal({ showModal, toggleModal }) {
   };
 
   const handleEditNote = async () => {
+    if (editedNote.trim() === "") return;
+
     try {
       await axios.put(
-        `http://localhost:8086/note/${selectedNoteId}`,
+        `http://localhost:8086/note/${editedNoteId}`,
         { message: editedNote },
         {
           headers: {
@@ -58,13 +61,15 @@ function NotesModal({ showModal, toggleModal }) {
         }
       );
       const updatedNotes = notes.map((note) => {
-        if (note.id === selectedNoteId) {
+        if (note.id === editedNoteId) {
           return { ...note, message: editedNote };
         }
         return note;
       });
       setNotes(updatedNotes);
-      setShowOptions(false);
+      setEditedNoteId(null);
+      setEditedNote("");
+      setSelectedNoteId(null);
     } catch (error) {
       console.error("Error updating note:", error);
     }
@@ -72,14 +77,16 @@ function NotesModal({ showModal, toggleModal }) {
 
   const handleDeleteNote = async () => {
     try {
-      await axios.delete(`http://localhost:8086/note/${selectedNoteId}`, {
+      await axios.delete(`http://localhost:8086/note/${editedNoteId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      const updatedNotes = notes.filter((note) => note.id !== selectedNoteId);
+      const updatedNotes = notes.filter((note) => note.id !== editedNoteId);
       setNotes(updatedNotes);
-      setShowOptions(false);
+      setEditedNoteId(null);
+      setEditedNote("");
+      setSelectedNoteId(null);
     } catch (error) {
       console.error("Error deleting note:", error);
     }
@@ -88,7 +95,6 @@ function NotesModal({ showModal, toggleModal }) {
   const startEditingNote = (noteId, noteMessage) => {
     setEditedNoteId(noteId);
     setEditedNote(noteMessage);
-    setShowOptions(true);
     setSelectedNoteId(noteId);
   };
 
@@ -96,7 +102,7 @@ function NotesModal({ showModal, toggleModal }) {
     <div>
       {showModal && (
         <div className="modal">
-          <div className="modal-content">
+          <div className="modal-content2">
             <span className="close" onClick={toggleModal}>
               &times;
             </span>
@@ -126,9 +132,11 @@ function NotesModal({ showModal, toggleModal }) {
                 value={newNote}
                 onChange={(e) => setNewNote(e.target.value)}
               />
-              <button onClick={handleSendNote}>Отправить заметку</button>
+              <button onClick={handleSendNote} disabled={newNote.trim() === ""}>
+                Senden
+              </button>
             </div>
-            {showOptions && (
+            {editedNoteId && (
               <div className="note-options">
                 <button onClick={handleEditNote}>Сохранить изменения</button>
                 <button onClick={handleDeleteNote}>Удалить заметку</button>
