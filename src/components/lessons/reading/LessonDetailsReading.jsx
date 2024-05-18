@@ -127,7 +127,7 @@ function LessonDetailsReading() {
         </div>
         <div className="button-container">
           <button className="button-79" onClick={handleCheckResult}>
-            Submit
+            Weiter
           </button>
         </div>
 

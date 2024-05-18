@@ -125,12 +125,8 @@ function Navbar({ email, levelNames, levelIndexes }) {
               )}
             </div>
           ))}
-          <button
-            className="logout-button"
-            onClick={handleLogout}
-            // style={{ marginTop: "15px !important;" }}
-          >
-            Logout
+          <button className="logout-button" onClick={handleLogout}>
+            Abmelden
           </button>
         </div>
       </nav>

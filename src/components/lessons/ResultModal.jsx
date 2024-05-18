@@ -8,9 +8,9 @@ function ResultModal({ result, onClose, onNext }) {
         <span className="close" onClick={onClose}>
           &times;
         </span>
-        <p className="result-text">Number of correct answers: {result}</p>
+        <p className="result-text">Anzahl der richtigen Antworten: {result}</p>
         <button className="next-button" onClick={onNext}>
-          Next
+          Weiter
         </button>
       </div>
     </div>

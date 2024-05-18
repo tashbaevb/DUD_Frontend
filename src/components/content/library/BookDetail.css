@@ -37,11 +37,19 @@ body {
   margin: 0;
   font-size: 24px;
 }
-.book-info p {
+
+#pAut {
   margin: 5px 0 !important;
   color: #555;
   font-size: x-large;
 }
+
+#pNiveau {
+  margin: 5px 0 !important;
+  color: #555;
+  font-size: medium;
+}
+
 .book-content {
   font-size: 16px;
   line-height: 1.6;

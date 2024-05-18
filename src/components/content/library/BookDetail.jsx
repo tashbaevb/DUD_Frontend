@@ -51,10 +51,9 @@ function BookDetail() {
             />
           )}
           <div className="book-info">
-            <h1>
-              {book.title} - {book.level.levelName}
-            </h1>
-            <p>Autor: {book.author}</p>
+            <h1>{book.title}</h1>
+            <p id="pAut">Autor: {book.author}</p>
+            <p id="pNiveau">Niveau: {book.level.levelName}</p>
           </div>
         </div>
         <div className="book-content">

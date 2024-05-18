@@ -4,10 +4,17 @@ import axios from "axios";
 import "./LessonList.css";
 import Navbar from "../navbar/Navbar";
 
+const levelIndexes = {
+  1: "A1",
+  2: "A2",
+  3: "B1",
+};
+
 function LessonList() {
   const { levelId } = useParams();
   const [lessons, setLessons] = useState([]);
   const [email, setEmail] = useState("");
+  const [levelName, setLevelName] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +32,8 @@ function LessonList() {
         const { data: profileData } = profileResponse;
 
         setLessons(lessonsData);
-        // setLevelNames(profileData.levelNames.sort());
         setEmail(profileData.email);
+        setLevelName(levelIndexes[levelId]);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -39,10 +46,10 @@ function LessonList() {
     <div className="mainLessonList">
       <Navbar email={email} />
       <div className="main-lessonList">
-        <h2 className="h2">Lektionen für das Niveau {levelId}</h2>
+        <h2 className="h2">Lektionen für das Niveau - {levelName}</h2>
         <div
           className="container2"
-          style={{ maxWidth: "90% !important", margin: "0 auto !important" }}
+          style={{ maxWidth: "90%", margin: "0 auto" }}
         >
           <div className="row">
             {lessons.map((lesson) => (

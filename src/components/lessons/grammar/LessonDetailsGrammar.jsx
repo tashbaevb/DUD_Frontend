@@ -66,7 +66,7 @@ function LessonDetailsGrammar() {
             role="button"
             onClick={handleReadingLessonClick}
           >
-            Submit
+            Weiter
           </button>
         </div>
       </main>

@@ -106,7 +106,7 @@ function NotesModal({ showModal, toggleModal }) {
             <span className="close" onClick={toggleModal}>
               &times;
             </span>
-            <h2 id="titleNotesda">Заметки</h2>
+            <h2 id="titleNotesda">Notizen</h2>
             <div>
               {notes.map((note) => (
                 <div
@@ -138,8 +138,8 @@ function NotesModal({ showModal, toggleModal }) {
             </div>
             {editedNoteId && (
               <div className="note-options">
-                <button onClick={handleEditNote}>Сохранить изменения</button>
-                <button onClick={handleDeleteNote}>Удалить заметку</button>
+                <button onClick={handleEditNote}>Änderungen speichern</button>
+                <button onClick={handleDeleteNote}>Notiz löschen</button>
               </div>
             )}
           </div>

@@ -11,10 +11,10 @@ function Footer() {
               type="email"
               id="emailInput"
               className="email-input-field"
-              placeholder="Enter your email"
+              placeholder="Schreiben Sie Ihre Meinung"
             />
             <button type="button" className="subscribe-button">
-              Subscribe
+              Senden
             </button>
           </form>
         </div>
