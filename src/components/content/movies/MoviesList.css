@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.movies-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  transition: filter 0.3s ease;
+}
+
+.blur-background {
+  filter: blur(5px);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.movie-item {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.movie-item:hover {
+  transform: scale(1.05);
+}
+
+.movie-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-details {
+  padding: 10px;
+}
+
+.movie-title {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.movie-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.movie-modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90%;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 2em;
+  color: #000;
+  cursor: pointer;
+}
+
+.movie-modal-poster {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.movie-modal-details {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.movie-country,
+.movie-description,
+.movie-level {
+  margin: 10px 0;
+  color: #333;
+}
+
+.play-button-modal {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.play-button-modal:hover {
+  background-color: #0056b3;
+}
