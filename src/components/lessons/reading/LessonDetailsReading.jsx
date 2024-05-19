@@ -77,7 +77,7 @@ function LessonDetailsReading() {
           <h2 id="big_title">{lesson.title}</h2>
         </div>
         <div id="big_text">
-          <p>{lesson.description}</p>
+          <p id="grDescr">{lesson.description}</p>
         </div>
         <div className="test-questions">
           {lesson.questions.map((question) => (

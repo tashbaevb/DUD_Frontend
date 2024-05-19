@@ -5,9 +5,8 @@ html {
 }
 
 .mainGrammar {
-  display: flex;
   flex-direction: column;
-  height: 81vh;
+  height: 100vh;
 }
 
 main {
@@ -29,6 +28,12 @@ main {
   padding: 40px;
 }
 
+#img-grammar {
+  padding: 20px;
+  width: auto !important;
+  height: auto !important;
+}
+
 #big_text {
   font-size: 16px;
   line-height: 1.6;
@@ -36,6 +41,13 @@ main {
   max-height: 500px;
   padding-top: 20px;
   border-top: 1px solid #ddd;
+}
+
+#grDescr {
+  margin: 10px !important;
+  padding: 7px;
+  font-size: large;
+  font-family: auto;
 }
 
 .test-questions {

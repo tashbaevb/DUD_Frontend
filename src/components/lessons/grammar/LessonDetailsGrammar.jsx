@@ -29,7 +29,7 @@ function LessonDetailsGrammar() {
         const { data: profileData } = profileResponse;
 
         setLesson(lessonData);
-        setEmail(profileData.email); // Set the email in state
+        setEmail(profileData.email);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -50,7 +50,7 @@ function LessonDetailsGrammar() {
           <h2 id="big_title">{lesson.title}</h2>
         </div>
         <div id="big_text">
-          <p>{lesson.description}</p>
+          <p id="grDescr">{lesson.description}</p>
         </div>
         {lesson.imgPath && (
           <img

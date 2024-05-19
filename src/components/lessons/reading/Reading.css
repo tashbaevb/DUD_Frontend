@@ -6,7 +6,6 @@ html {
 
 .main-content {
   min-height: 100%;
-  display: flex;
   flex-direction: column;
   height: 100vh;
 }

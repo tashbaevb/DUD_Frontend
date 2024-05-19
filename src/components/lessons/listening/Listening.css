@@ -6,7 +6,6 @@ html {
 
 .main-content {
   min-height: 100%;
-  display: flex;
   flex-direction: column;
 }
 
@@ -172,7 +171,6 @@ main {
 
 /* Стили для контролов аудио */
 #audioPlayer::-webkit-media-controls {
-  background-color: #ffffff;
   border-radius: 5px;
 }
 
