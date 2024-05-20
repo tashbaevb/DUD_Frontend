@@ -13,11 +13,11 @@ import MoviesList from "./components/content/movies/MoviesList";
 import MovieDetail from "./components/content/movies/MovieDetail";
 import "./App.css";
 // import Sidebar from "./components/content/NoteChat";
-import Footer from "./components/footer/Footer";
+// import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <main className="mainApp">
+    <main className="mainApp" style={{ height: "100%" }}>
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
@@ -43,7 +43,6 @@ function App() {
           {/* <Route path="/sidebar" element={<Sidebar />} /> */}
         </Routes>
       </Router>
-      <Footer />
     </main>
   );
 }

@@ -138,7 +138,7 @@ function UserProfile() {
               className="btn btn-primary mx-auto "
               style={{ marginTop: "20px !important" }}
             >
-              Erkunden
+              Besuchen
             </a>
           </div>
         </div>
@@ -156,6 +156,7 @@ function UserProfile() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

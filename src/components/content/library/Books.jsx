@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./books.css";
 import Navbar from "../../navbar/Navbar";
+import Footer from "../../footer/Footer";
 
 function Books() {
   const [books, setBooks] = useState([]);
@@ -54,6 +55,7 @@ function Books() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../../navbar/Navbar";
 import "./MoviesList.css";
 import closeIcon from "../../../assets/close.png";
+import Footer from "../../footer/Footer";
 
 function MoviesList() {
   const [movies, setMovies] = useState([]);
@@ -113,6 +114,7 @@ function MoviesList() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

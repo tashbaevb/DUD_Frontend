@@ -52,7 +52,7 @@ function SignUp() {
     <div className="main">
       <div className="regist">
         <div className="reg_text">
-          <h1>Регистрация</h1>
+          <h1>Registrierung</h1>
         </div>
         <div className="form_reg">
           <form onSubmit={handleFormSubmit} className="reg_form">
@@ -77,7 +77,7 @@ function SignUp() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <label htmlFor="language_level">Выберите уровень языка:</label>
+            <label htmlFor="language_level">Wählen Sie das Sprachniveau:</label>
             <select
               name="language_level"
               id="language_level"
@@ -97,11 +97,11 @@ function SignUp() {
               <option value="4">B2</option>
             </select>
             <button id="reg_but" type="submit">
-              <span id="reg_text_but">Register</span>
+              <span id="reg_text_but">Registrieren</span>
             </button>
           </form>
           <p id="text_after_but">
-            Have an account?{" "}
+            Haben Sie ein Konto?{" "}
             <span id="text_in_p">
               <a href="/">Log in</a>
             </span>

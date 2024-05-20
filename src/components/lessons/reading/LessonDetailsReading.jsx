@@ -125,7 +125,7 @@ function LessonDetailsReading() {
             </div>
           ))}
         </div>
-        <div className="button-container">
+        <div className="button-container" style={{ padding: "10px 0 70px" }}>
           <button className="button-79" onClick={handleCheckResult}>
             Weiter
           </button>

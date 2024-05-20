@@ -53,14 +53,24 @@ function LessonDetailsGrammar() {
           <p id="grDescr">{lesson.description}</p>
         </div>
         {lesson.imgPath && (
-          <img
-            id="img-grammar"
-            src={`http://localhost:8086/${lesson.imgPath}`}
-            alt="Lesson Image"
-            style={{ width: "300px", height: "auto" }}
-          />
+          <div
+            style={{
+              width: "100%",
+              display: "flex ",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "30px 0",
+            }}
+          >
+            <img
+              style={{ margin: "0 auto !important", width: "500px !important" }}
+              id="img-grammar"
+              src={`http://localhost:8086/${lesson.imgPath}`}
+              alt="Lesson Image"
+            />
+          </div>
         )}
-        <div className="button-container">
+        <div className="button-container" style={{ padding: "0 0 70px" }}>
           <button
             className="button-79"
             role="button"

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./BookDetail.css";
 import Navbar from "../../navbar/Navbar";
+import Footer from "../../footer/Footer";
 
 function BookDetail() {
   const { bookId } = useParams();
@@ -62,6 +63,7 @@ function BookDetail() {
           <p>{book.content}</p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

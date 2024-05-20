@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./LessonList.css";
 import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
 
 const levelIndexes = {
   1: "A1",
@@ -72,6 +73,7 @@ function LessonList() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
