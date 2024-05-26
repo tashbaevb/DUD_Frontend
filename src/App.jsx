@@ -14,12 +14,14 @@ import MovieDetail from "./components/content/movies/MovieDetail";
 import "./App.css";
 // import Sidebar from "./components/content/NoteChat";
 // import Footer from "./components/footer/Footer";
+import FirstLookPage from "./components/firstLookPage/firstLookPage";
 
 function App() {
   return (
     <main className="mainApp" style={{ height: "100%" }}>
       <Router>
         <Routes>
+          <Route path="/first-look" element={<FirstLookPage />} />
           <Route path="/" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/profile/:email" element={<UserProfile />} />

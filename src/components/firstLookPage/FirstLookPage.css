@@ -1,0 +1,174 @@
+#FirstLookPage-container {
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.FirstLookPage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.FirstLookPage-header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.FirstLookPage-header nav ul li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.FirstLookPage-header nav ul li:hover {
+  color: #007BFF;
+}
+
+.auth-button {
+  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-button:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #003f7f 100%);
+  transform: translateY(-2px);
+}
+
+.auth-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.FirstLookPage-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.FirstLookPage-content {
+  max-width: 800px;
+  width: 100%;
+}
+
+.row-section .FirstLookPage-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.FirstLookPage-feature-item, .FirstLookPage-stat-item {
+  text-align: center;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.FirstLookPage-feature-item img, .FirstLookPage-stat-item img {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+#FirstLookPage-intro {
+  background: #f9f9f9;
+  border-bottom: 2px solid #ccc;
+}
+#FirstLookPage-intro img{
+  width: 400px;
+  height: 400px;
+}
+
+.FirstLookPage-intro-content {
+  margin-bottom: 20px;
+}
+
+.FirstLookPage-intro-content h1 {
+  font-size: 48px;
+  margin: 0 0 20px;
+}
+
+.FirstLookPage-intro-content p {
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+
+.FirstLookPage-intro-content button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.FirstLookPage-intro-content button:hover {
+  background: #0056b3;
+}
+
+.FirstLookPage-intro-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#FirstLookPage-testimonial {
+  background: #f9f9f9;
+  border-bottom: 2px solid #ccc;
+}
+
+#FirstLookPage-testimonial img {
+  max-width: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+#FirstLookPage-testimonial blockquote {
+  font-style: italic;
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+
+#FirstLookPage-cta {
+  background: #f9f9f9;
+}
+
+.FirstLookPage-cta-image {
+  margin: 20px 0;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px !important;
+}
+
+.cta-button:hover {
+  background: #0056b3;
+}
+
+.FirstLookPage-footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 2px solid #ccc;
+}
