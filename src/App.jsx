@@ -12,8 +12,6 @@ import BookDetail from "./components/content/library/BookDetail";
 import MoviesList from "./components/content/movies/MoviesList";
 import MovieDetail from "./components/content/movies/MovieDetail";
 import "./App.css";
-// import Sidebar from "./components/content/NoteChat";
-// import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -40,7 +38,6 @@ function App() {
           <Route path="/book/:bookId" element={<BookDetail />} />
           <Route path="/movies" element={<MoviesList />} />
           <Route path="/movie/:movieId" element={<MovieDetail />} />
-          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
         </Routes>
       </Router>
     </main>
