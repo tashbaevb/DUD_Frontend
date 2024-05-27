@@ -1,3 +1,4 @@
+/* FirstLookPage.css */
 #FirstLookPage-container {
   width: 100%;
   font-family: 'Arial', sans-serif;
@@ -50,7 +51,6 @@
   text-decoration: none;
 }
 
-
 .FirstLookPage-section {
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@
   padding: 0 20px;
 }
 
-.FirstLookPage-feature-item img, .FirstLookPage-stat-item img {
+.FirstLookPage-feature-item img {
   max-width: 100px;
   margin-bottom: 20px;
 }
@@ -87,7 +87,8 @@
   background: #f9f9f9;
   border-bottom: 2px solid #ccc;
 }
-#FirstLookPage-intro img{
+
+#FirstLookPage-intro img {
   width: 400px;
   height: 400px;
 }
@@ -149,6 +150,7 @@
 
 .FirstLookPage-cta-image {
   margin: 20px 0;
+  width: 500px;
 }
 
 .cta-button {
@@ -171,4 +173,7 @@
   text-align: center;
   padding: 20px 0;
   border-top: 2px solid #ccc;
+}
+#SubscribeButton11{
+  margin-top: 40px !important;
 }
