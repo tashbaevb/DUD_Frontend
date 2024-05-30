@@ -12,12 +12,19 @@ import BookDetail from "./components/content/library/BookDetail";
 import MoviesList from "./components/content/movies/MoviesList";
 import MovieDetail from "./components/content/movies/MovieDetail";
 import "./App.css";
+<<<<<<< HEAD
 
+=======
+// import Sidebar from "./components/content/NoteChat";
+// import Footer from "./components/footer/Footer";
+import FirstLookPage from "./components/firstLookPage/firstLookPage";
+>>>>>>> merge
 function App() {
   return (
     <main className="mainApp" style={{ height: "100%" }}>
       <Router>
         <Routes>
+          <Route path="/first-look" element={<FirstLookPage />} />
           <Route path="/" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/profile/:email" element={<UserProfile />} />

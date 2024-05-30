@@ -1,0 +1,330 @@
+#FirstLookPage-container {
+  width: 100%;
+  font-family: "Arial", sans-serif;
+}
+
+.FirstLookPage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.FirstLookPage-header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+.FirstLookPage-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.FirstLookPage-header #registerButtonFirst {
+  position: relative;
+  left: 1200px;
+  top: 5px;
+}
+
+.FirstLookPage-header nav ul li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.FirstLookPage-header nav ul li:hover {
+  color: #007bff;
+}
+
+.auth-button {
+  display: inline-block; /* Inline-block for better flow */
+  padding: 10px 20px; /* Minimal padding */
+  font-size: 16px; /* Standard font size */
+  font-weight: normal; /* Normal font weight */
+  color: rgb(91, 81, 222); /* Subtle text color */
+  background: transparent; /* Transparent background */
+  cursor: pointer; /* Pointer cursor */
+  text-align: center; /* Center align text */
+  text-decoration: none; /* Remove text decoration */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for color changes */
+}
+
+.auth-button:hover {
+  color: #fff; /* Change text color on hover */
+}
+
+.auth-button a {
+  color: inherit; /* Inherit text color */
+  text-decoration: none; /* Ensure no text decoration */
+  display: inline-block; /* Inline-block for link */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  line-height: 100%; /* Center align text vertically */
+  text-align: center; /* Center align text horizontally */
+}
+
+.FirstLookPage-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+}
+
+.FirstLookPage-content {
+  /* max-width: 800px; */
+  width: 100%;
+}
+
+.row-section .FirstLookPage-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.FirstLookPage-feature-item,
+.FirstLookPage-stat-item {
+  text-align: center;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.FirstLookPage-feature-item img {
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+#FirstLookPage-intro {
+  background: #f9f9f9;
+  border-bottom: 2px solid #ccc;
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: center;
+}
+
+.FirstLookPage-intro-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.FirstLookPage-intro-content h1 {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.FirstLookPage-intro-content p {
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+
+.FirstLookPage-intro-content button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin: 0 auto; /* Center the button horizontally */
+}
+
+.FirstLookPage-intro-content button:hover {
+  background: #0056b3;
+}
+
+.FirstLookPage-intro-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#FirstLookPage-testimonial {
+  background: #f9f9f9;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.testimonial-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#FirstLookPage-testimonial img {
+  max-width: 350px;
+  border-radius: 50%;
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+#FirstLookPage-testimonial blockquote {
+  font-style: italic;
+  font-size: 18px;
+  margin: 0 20px;
+  flex: 1;
+}
+
+#FirstLookPage-testimonial blockquote p {
+  margin: 0 0 10px;
+}
+
+#FirstLookPage-testimonial blockquote footer {
+  font-weight: bold;
+}
+
+#FirstLookPage-testimonial blockquote footer span {
+  font-weight: normal;
+  color: #666;
+}
+
+.FirstLookPage-footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 2px solid #ccc;
+}
+
+#FirstLookPage-stats {
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-item h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 80px;
+}
+
+.stats-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1 1 200px;
+  margin: 20px;
+}
+
+.stat-item img {
+  max-width: 50px;
+  margin-bottom: 10px;
+}
+
+#FirstLookPage-cta {
+  color: white;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.FirstLookPage-cta-text {
+  flex: 1;
+  text-align: left;
+  color: white;
+  padding-right: 20px;
+}
+
+.FirstLookPage-cta-image img {
+  max-width: 700px;
+}
+
+.cta-input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cta-input-container input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.cta-input-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-input-container button:hover {
+  background: #0056b3;
+}
+#FirstLookPage-cta-text-span {
+  color: rgb(0, 0, 0);
+  font-family: SF UI Display;
+  font-size: 70px;
+  font-weight: 500 !important;
+  line-height: 80px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+/* ... existing CSS ... */
+
+.stats-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1 1 200px;
+  max-width: 250px;
+  margin: 20px;
+}
+#first-text1 {
+  font-size: 3em;
+  color: #000000;
+  font-weight: bold;
+}
+#second-text2 {
+  font-size: 1em;
+  color: #aaaaaa;
+  opacity: 0.5;
+}
