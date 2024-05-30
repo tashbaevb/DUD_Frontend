@@ -1,4 +1,3 @@
-/* FirstLookPage.css */
 #FirstLookPage-container {
   width: 100%;
   font-family: 'Arial', sans-serif;
@@ -19,6 +18,19 @@
   padding: 0;
   margin: 0;
 }
+.FirstLookPage-header img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+}
+.FirstLookPage-header #registerButtonFirst{
+  position: relative;
+  left: 1250px;
+  top: 5px;  
+
+}
+
 
 .FirstLookPage-header nav ul li {
   cursor: pointer;
@@ -30,36 +42,46 @@
 }
 
 .auth-button {
-  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Inline-block for better flow */
+  padding: 10px 20px; /* Minimal padding */
+  font-size: 16px; /* Standard font size */
+  font-weight: normal; /* Normal font weight */
+  color: rgb(91, 81, 222); /* Subtle text color */
+  background: transparent; /* Transparent background */
+  cursor: pointer; /* Pointer cursor */
+  text-align: center; /* Center align text */
+  text-decoration: none; /* Remove text decoration */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for color changes */
 }
 
 .auth-button:hover {
-  background: linear-gradient(135deg, #0056b3 0%, #003f7f 100%);
-  transform: translateY(-2px);
+  color: #fff; /* Change text color on hover */
 }
 
 .auth-button a {
-  color: #fff;
-  text-decoration: none;
+  color: inherit; /* Inherit text color */
+  text-decoration: none; /* Ensure no text decoration */
+  display: inline-block; /* Inline-block for link */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  line-height: 100%; /* Center align text vertically */
+  text-align: center; /* Center align text horizontally */
 }
+
+
+
+
 
 .FirstLookPage-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   padding: 50px 20px;
   box-sizing: border-box;
   text-align: center;
+  width: 100%;
+
 }
 
 .FirstLookPage-content {
@@ -79,7 +101,7 @@
 }
 
 .FirstLookPage-feature-item img {
-  max-width: 100px;
+  max-width: 400px;
   margin-bottom: 20px;
 }
 
@@ -88,18 +110,24 @@
   border-bottom: 2px solid #ccc;
 }
 
-#FirstLookPage-intro img {
-  width: 400px;
-  height: 400px;
+.intro-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: center;
 }
 
 .FirstLookPage-intro-content {
-  margin-bottom: 20px;
+  max-width: 600px;
+  text-align: center;
 }
 
 .FirstLookPage-intro-content h1 {
-  font-size: 48px;
-  margin: 0 0 20px;
+  font-size: 55px;
+  font-weight: bold;
 }
 
 .FirstLookPage-intro-content p {
@@ -116,6 +144,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin: 0 auto; /* Center the button horizontally */
 }
 
 .FirstLookPage-intro-content button:hover {
@@ -130,43 +159,48 @@
 #FirstLookPage-testimonial {
   background: #f9f9f9;
   border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.testimonial-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 #FirstLookPage-testimonial img {
-  max-width: 100px;
+  max-width: 350px;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 0; /* Remove bottom margin */
 }
 
 #FirstLookPage-testimonial blockquote {
   font-style: italic;
   font-size: 18px;
-  margin: 0 0 20px;
+  margin: 0 20px;
+  flex: 1;
 }
 
-#FirstLookPage-cta {
-  background: #f9f9f9;
+#FirstLookPage-testimonial blockquote p {
+  margin: 0 0 10px;
 }
 
-.FirstLookPage-cta-image {
-  margin: 20px 0;
-  width: 500px;
+#FirstLookPage-testimonial blockquote footer {
+  font-weight: bold;
 }
 
-.cta-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-top: 20px !important;
-}
-
-.cta-button:hover {
-  background: #0056b3;
+#FirstLookPage-testimonial blockquote footer span {
+  font-weight: normal;
+  color: #666;
 }
 
 .FirstLookPage-footer {
@@ -174,6 +208,130 @@
   padding: 20px 0;
   border-top: 2px solid #ccc;
 }
-#SubscribeButton11{
-  margin-top: 40px !important;
+
+#FirstLookPage-stats {
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-item h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 80px;
+}
+
+.stats-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1 1 200px;
+  margin: 20px;
+}
+
+.stat-item img {
+  max-width: 50px;
+  margin-bottom: 10px;
+}
+
+#FirstLookPage-cta {
+  color: white;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.FirstLookPage-cta-text {
+  flex: 1;
+  text-align: left;
+  color: white;
+  padding-right: 20px;
+}
+
+.FirstLookPage-cta-image img {
+  max-width: 700px;
+}
+
+.cta-input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cta-input-container input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.cta-input-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-input-container button:hover {
+  background: #0056b3;
+}
+#FirstLookPage-cta-text-span{
+  color: rgb(0, 0, 0);
+  font-family: SF UI Display;
+  font-size: 70px;
+  font-weight: 500 !important;
+  line-height: 80px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+/* ... existing CSS ... */
+
+.stats-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px; 
+  margin: 0 auto; 
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1 1 200px;
+  max-width: 250px; 
+  margin: 20px;
+}
+#first-text1 {
+  font-size: 3em;
+  color: #000000;
+  font-weight: bold;
+}
+#second-text2 {
+  font-size: 1em;
+  color: #aaaaaa;
+  opacity: 0.5;
 }

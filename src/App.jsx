@@ -15,7 +15,6 @@ import "./App.css";
 // import Sidebar from "./components/content/NoteChat";
 // import Footer from "./components/footer/Footer";
 import FirstLookPage from "./components/firstLookPage/firstLookPage";
-
 function App() {
   return (
     <main className="mainApp" style={{ height: "100%" }}>
