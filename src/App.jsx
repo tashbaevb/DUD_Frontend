@@ -11,6 +11,8 @@ import Books from "./components/content/library/Books";
 import BookDetail from "./components/content/library/BookDetail";
 import MoviesList from "./components/content/movies/MoviesList";
 import MovieDetail from "./components/content/movies/MovieDetail";
+import FirstLookPage from "./components/firstLook/FirstLookPage";
+
 import "./App.css";
 
 function App() {
@@ -18,7 +20,8 @@ function App() {
     <main className="mainApp" style={{ height: "100%" }}>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<FirstLookPage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/profile/:email" element={<UserProfile />} />
           <Route path="/lessons/:levelId" element={<LessonList />} />
