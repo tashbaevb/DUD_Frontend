@@ -1,6 +1,6 @@
 #FirstLookPage-container {
   width: 100%;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .FirstLookPage-header {
@@ -18,19 +18,16 @@
   padding: 0;
   margin: 0;
 }
-.FirstLookPage-header img{
+.FirstLookPage-header img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-
 }
-.FirstLookPage-header #registerButtonFirst{
+.FirstLookPage-header #registerButtonFirst {
   position: relative;
-  left: 1250px;
-  top: 5px;  
-
+  left: 1200px;
+  top: 5px;
 }
-
 
 .FirstLookPage-header nav ul li {
   cursor: pointer;
@@ -38,7 +35,7 @@
 }
 
 .FirstLookPage-header nav ul li:hover {
-  color: #007BFF;
+  color: #007bff;
 }
 
 .auth-button {
@@ -68,10 +65,6 @@
   text-align: center; /* Center align text horizontally */
 }
 
-
-
-
-
 .FirstLookPage-section {
   display: flex;
   flex-direction: column;
@@ -81,11 +74,10 @@
   box-sizing: border-box;
   text-align: center;
   width: 100%;
-
 }
 
 .FirstLookPage-content {
-  max-width: 800px;
+  /* max-width: 800px; */
   width: 100%;
 }
 
@@ -94,7 +86,8 @@
   justify-content: space-around;
 }
 
-.FirstLookPage-feature-item, .FirstLookPage-stat-item {
+.FirstLookPage-feature-item,
+.FirstLookPage-stat-item {
   text-align: center;
   flex: 1;
   padding: 0 20px;
@@ -138,7 +131,7 @@
 .FirstLookPage-intro-content button {
   padding: 10px 20px;
   font-size: 18px;
-  background: #007BFF;
+  background: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -289,7 +282,7 @@
 .cta-input-container button {
   padding: 10px 20px;
   font-size: 16px;
-  background: #007BFF;
+  background: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -300,7 +293,7 @@
 .cta-input-container button:hover {
   background: #0056b3;
 }
-#FirstLookPage-cta-text-span{
+#FirstLookPage-cta-text-span {
   color: rgb(0, 0, 0);
   font-family: SF UI Display;
   font-size: 70px;
@@ -315,14 +308,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1000px; 
-  margin: 0 auto; 
+  max-width: 1000px;
+  margin: 0 auto;
   text-align: center;
 }
 
 .stat-item {
   flex: 1 1 200px;
-  max-width: 250px; 
+  max-width: 250px;
   margin: 20px;
 }
 #first-text1 {
